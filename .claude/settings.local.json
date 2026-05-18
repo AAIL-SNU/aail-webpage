@@ -4,7 +4,12 @@
       "WebFetch(domain:aail.snu.ac.kr)",
       "Bash(python3 -m http.server 8080)",
       "Bash(curl -s http://localhost:8080/)",
-      "Bash(node --check /home/rimi/my-webpage/script.js)"
+      "Bash(node --check /home/rimi/my-webpage/script.js)",
+      "WebFetch(domain:mcml.kau.ac.kr)",
+      "Bash(curl -s https://mcml.kau.ac.kr/index.php)",
+      "Bash(curl -s https://mcml.kau.ac.kr/css/default.css)",
+      "Bash(curl -s https://mcml.kau.ac.kr/css/main.css)",
+      "Bash(curl -s https://mcml.kau.ac.kr/css/sub.css)"
     ]
   }
 }
