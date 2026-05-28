@@ -1,0 +1,13 @@
+{
+  "name": "aail-webpage",
+  "version": "1.0.0",
+  "description": "AAIL — Aerospace Autonomy and Intelligence Laboratory website",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "dev": "npx @11ty/eleventy --serve --incremental"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

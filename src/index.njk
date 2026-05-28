@@ -1,3 +1,4 @@
+{% import "macros.njk" as macros %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,37 +110,29 @@
     <!-- ── MEGA MENU ──────────────────────────────────────────── -->
     <div id="mega-menu" role="navigation" aria-label="Site sections">
       <div class="mega-inner">
-
         <div class="mega-col">
           <a href="#" class="mega-link about-subtab" data-subtab="about">About AAIL</a>
           <a href="#" class="mega-link about-subtab" data-subtab="courses">Courses</a>
         </div>
-
         <div class="mega-col">
           <a href="#" class="nav-tab mega-link" data-target="page-research">Research Topics</a>
           <a href="#" class="nav-tab mega-link" data-target="page-projects">Projects</a>
         </div>
-
         <div class="mega-col">
           <a href="#" class="mega-link mega-subtab" data-target="page-members" data-subtab="pi">Professor</a>
           <a href="#" class="mega-link mega-subtab" data-target="page-members" data-subtab="students">Students</a>
           <a href="#" class="mega-link mega-subtab" data-target="page-members" data-subtab="alumni">Alumni</a>
         </div>
-
         <div class="mega-col">
           <a href="#" class="mega-link mega-filtertab" data-target="page-publications" data-filter="journal">Journal</a>
           <a href="#" class="mega-link mega-filtertab" data-target="page-publications" data-filter="conference">Conference</a>
           <a href="#" class="mega-link mega-filtertab" data-target="page-publications" data-filter="preprint">Preprint</a>
         </div>
-
         <div class="mega-col">
           <a href="#" class="mega-link mega-boardtab" data-target="page-board" data-subtab="news">News</a>
           <a href="#" class="mega-link mega-boardtab" data-target="page-board" data-subtab="gallery">Gallery</a>
         </div>
-
-        <div class="mega-col">
-        </div>
-
+        <div class="mega-col"></div>
       </div>
     </div>
   </header>
@@ -224,7 +217,11 @@
             </div>
             <a href="#" class="btn btn-outline nav-tab" data-target="page-publications">View All Publications →</a>
           </div>
-          <div id="pub-teaser"></div>
+          <div id="pub-teaser">
+            {% for pub in pubTeaser %}
+            {{ macros.pubItem(pub) }}
+            {% endfor %}
+          </div>
         </div>
       </section>
 
@@ -238,7 +235,26 @@
             </div>
             <a href="#" class="btn btn-outline nav-tab" data-target="page-board">View All News →</a>
           </div>
-          <div id="news-teaser"></div>
+          <div id="news-teaser">
+            <div class="news-grid">
+              {% for item in collections.news | take(3) %}
+              <div class="news-card fade-in">
+                <div class="news-card-img">
+                  {% if item.data.image %}
+                    <img src="{{ item.data.image }}" alt="{{ item.data.title }}" loading="lazy" />
+                  {% else %}
+                    <div class="news-card-placeholder"><span>{{ item.data.month }}</span><span>{{ item.data.year }}</span></div>
+                  {% endif %}
+                </div>
+                <div class="news-card-body">
+                  <p class="news-card-date">{{ item.data.month }} {{ item.data.year }}</p>
+                  <p class="news-card-title">{{ item.data.title }}</p>
+                  <p class="news-card-text">{{ item.templateContent | striptags }}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -256,7 +272,6 @@
             </div>
             <div class="section-header-line"></div>
           </div>
-          <!-- About sub-tabs -->
           <div class="about-tabs fade-in">
             <button class="about-tab active" data-panel="about">About AAIL</button>
             <button class="about-tab" data-panel="courses">Courses</button>
@@ -318,7 +333,15 @@
 
             <div class="collab-section fade-in">
               <h3 class="collab-title">Collaborators</h3>
-              <div class="collab-grid" id="collab-grid"></div>
+              <div class="collab-grid" id="collab-grid">
+                {% for c in collaborators %}
+                  {% if c.url %}
+                    <a class="collab-chip" href="{{ c.url }}" target="_blank" rel="noopener"><span class="collab-name">{{ c.name }}</span></a>
+                  {% else %}
+                    <div class="collab-chip"><span class="collab-name">{{ c.name }}</span></div>
+                  {% endif %}
+                {% endfor %}
+              </div>
             </div>
 
           </div><!-- /about-panel-about -->
@@ -438,7 +461,20 @@
             <p class="section-desc fade-in">Our research spans the theory and application of intelligent autonomous systems in aerospace.</p>
           </div>
         </section>
-        <div class="research-img-grid" id="research-img-grid"></div>
+        <div class="research-img-grid" id="research-img-grid">
+          {% for area in research %}
+          <div class="research-img-card" data-delay="{{ loop.index0 }}" onclick="openResearchDetail({{ loop.index0 }})">
+            <div class="research-img-bg" style="background-image: url('{{ area.image }}')"></div>
+            <div class="research-img-overlay"></div>
+            <div class="research-img-content">
+              <div class="research-img-tags">
+                {% for tag in area.tags %}<span class="research-img-tag">{{ tag }}</span>{% endfor %}
+              </div>
+              <h3 class="research-img-title">{{ area.title }}</h3>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
       <div id="research-detail-view" style="display:none"></div>
     </div>
@@ -455,7 +491,6 @@
             <div class="section-header-line"></div>
           </div>
 
-          <!-- Internal sub-tabs -->
           <div class="member-tabs fade-in">
             <button class="member-tab active" data-panel="pi">Principal Investigator</button>
             <button class="member-tab" data-panel="students">Students</button>
@@ -464,8 +499,6 @@
 
           <!-- Panel: PI -->
           <div class="member-panel active" id="panel-pi">
-
-            <!-- Profile card -->
             <div class="pi-profile fade-in">
               <div class="pi-profile-card">
                 <div class="pi-avatar">
@@ -513,9 +546,7 @@
               </div>
             </div>
 
-            <!-- Sections: reference-style layout -->
             <div class="pi-sections">
-
               <div class="pi-section fade-in">
                 <div class="pi-section-label">Current<br />Position</div>
                 <ul class="pi-section-list">
@@ -523,7 +554,6 @@
                   <li><em>Affiliation:</em> Artificial Intelligence Institute; Institute of Advanced Aerospace Technology</li>
                 </ul>
               </div>
-
               <div class="pi-section fade-in">
                 <div class="pi-section-label">Education</div>
                 <ul class="pi-section-list">
@@ -532,7 +562,6 @@
                   <li>(2007.3~2009.2) Seoul Science High School</li>
                 </ul>
               </div>
-
               <div class="pi-section fade-in">
                 <div class="pi-section-label">Experience</div>
                 <ul class="pi-section-list">
@@ -549,7 +578,6 @@
                   <li>(2007.11.21~2007.11.29) The 3rd Asian-Pacific Astronomy Olympiad (APAO)</li>
                 </ul>
               </div>
-
               <div class="pi-section fade-in">
                 <div class="pi-section-label">Honours &amp;<br />Awards &amp;<br />Scholarships</div>
                 <ul class="pi-section-list">
@@ -563,25 +591,59 @@
                   <li>Academic Excellence Scholarship</li>
                 </ul>
               </div>
-
               <div class="pi-section fade-in">
                 <div class="pi-section-label">Media</div>
                 <ul class="pi-section-list">
                   <li>(2021.6) Early Career Researcher Interview, "Unified Design Frameworks for Control and Estimation with Aerospace Applications," Mechanical Engineering and Robotics Research Information Center, Written Interview <em>(in Korean)</em></li>
                 </ul>
               </div>
-
             </div>
           </div>
 
-          <!-- Panel: Students (data/members.js snu group) -->
+          <!-- Panel: Students -->
           <div class="member-panel" id="panel-students">
-            <div id="students-container"></div>
+            <div id="students-container">
+              {% set studentGroups = [
+                { label: 'PhD Students',  members: members.snu.phd, avatarKey: 'phd', defaultRole: 'PhD Student'  },
+                { label: 'MSc Students',  members: members.snu.msc, avatarKey: 'msc', defaultRole: 'MSc Student'  },
+                { label: 'BSc Students',  members: members.snu.bsc, avatarKey: 'bsc', defaultRole: 'BSc Student'  }
+              ] %}
+              {% for group in studentGroups %}
+              {% if group.members | length > 0 %}
+              <div class="members-group fade-in">
+                <h3 class="members-group-title">{{ group.label }}</h3>
+                <div class="members-subgroup">
+                  <div class="members-grid">
+                    {% for mem in group.members %}
+                    {{ macros.memberCard(mem, group.avatarKey, group.defaultRole) }}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
           </div>
 
-          <!-- Panel: Alumni (data/members.js cranfield group) -->
+          <!-- Panel: Alumni -->
           <div class="member-panel" id="panel-alumni">
-            <div id="alumni-container"></div>
+            <div id="alumni-container">
+              {% set alumniMembers = members.cranfield.phd %}
+              {% if alumniMembers | length > 0 %}
+              <div class="members-group fade-in">
+                <h3 class="members-group-title">PhD Alumni <span class="members-group-note">(Co-supervised, Cranfield University)</span></h3>
+                <div class="members-subgroup">
+                  <div class="members-grid">
+                    {% for mem in alumniMembers %}
+                    {{ macros.memberCard(mem, 'phd', 'PhD Alumni') }}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              {% else %}
+              <p style="color:var(--text-lt);font-size:.9rem;padding:16px 0;">No alumni records yet.</p>
+              {% endif %}
+            </div>
           </div>
 
         </div>
@@ -609,9 +671,15 @@
           </div>
 
           <div class="pub-list" id="pub-list">
-            <!-- data/publications.js 에서 자동으로 채워집니다 -->
+            {% for group in publicationsGrouped %}
+            <div class="pub-year-group" data-type="{{ group.type }}">
+              <div class="pub-year-label">{{ group.year }}</div>
+              {% for pub in group.items %}
+              {{ macros.pubItem(pub) }}
+              {% endfor %}
+            </div>
+            {% endfor %}
           </div>
-
 
         </div>
       </section>
@@ -636,12 +704,53 @@
 
           <!-- Panel: News -->
           <div class="board-panel active" id="board-panel-news">
-            <div id="news-container"></div>
+            <div id="news-container">
+              {% set newsCount = collections.news | length %}
+              <div class="board-list">
+                <div class="board-list-header">
+                  <span class="board-col-num">No.</span>
+                  <span class="board-col-title">제목</span>
+                  <span class="board-col-date">날짜</span>
+                </div>
+                {% for item in collections.news %}
+                <div class="board-row fade-in" onclick="openNewsModal({{ loop.index0 }})">
+                  <span class="board-col-num">{{ newsCount - loop.index0 }}</span>
+                  <span class="board-col-title">{{ item.data.title }}</span>
+                  <span class="board-col-date">{{ item.data.year }}-{{ item.data.month | monthNum }}</span>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
           </div>
 
           <!-- Panel: Gallery -->
           <div class="board-panel" id="board-panel-gallery">
-            <div id="gallery-container"></div>
+            <div id="gallery-container">
+              {% if collections.gallery | length == 0 %}
+              <p style="color:var(--text-lt);font-size:.9rem;padding:24px 0;">No gallery posts yet.</p>
+              {% else %}
+              <div class="news-grid">
+                {% for item in collections.gallery %}
+                {% set dp = item.data.displayDate | splitFirst %}
+                <div class="news-card gallery-card fade-in" role="button" tabindex="0"
+                     onclick="openGalleryModal({{ loop.index0 }})"
+                     onkeydown="if(event.key==='Enter')openGalleryModal({{ loop.index0 }})">
+                  <div class="news-card-img">
+                    {% if item.data.cover %}
+                      <img src="{{ item.data.cover }}" alt="{{ item.data.title }}" loading="lazy" />
+                    {% else %}
+                      <div class="news-card-placeholder"><span>{{ dp[0] }}</span><span>{{ dp[1] }}</span></div>
+                    {% endif %}
+                  </div>
+                  <div class="news-card-body">
+                    <p class="news-card-date">{{ item.data.displayDate }}</p>
+                    <p class="news-card-title">{{ item.data.title }}</p>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
           </div>
         </div>
       </section>
@@ -709,15 +818,10 @@
             <div class="contact-map fade-in">
               <iframe
                 src="https://maps.google.com/maps?q=Seoul+National+University+1+Gwanak-ro+Gwanak-gu+Seoul+South+Korea&z=16&output=embed"
-                width="100%"
-                height="100%"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+                width="100%" height="100%" style="border:0;"
+                allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-
             <div class="join-cta fade-in">
               <h3>Interested in Joining?</h3>
               <p>We are looking for motivated graduate students and researchers. Please contact the PI with your CV and academic transcript.</p>
@@ -746,7 +850,14 @@
             <button class="proj-tab" data-filter="completed">Completed Projects</button>
           </div>
 
-          <div id="projects-container"></div>
+          <div id="projects-container">
+            <div id="projects-ongoing" class="proj-group">
+              {{ macros.projCards(projects.ongoing, 'ongoing') }}
+            </div>
+            <div id="projects-completed" class="proj-group hidden">
+              {{ macros.projCards(projects.completed, 'completed') }}
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -783,7 +894,7 @@
     </svg>
   </button>
 
-  <!-- Gallery Modal -->
+  <!-- Gallery / News Modal -->
   <div class="gallery-modal" id="gallery-modal" aria-hidden="true">
     <div class="gallery-modal-backdrop" id="gallery-modal-backdrop"></div>
     <div class="gallery-modal-dialog">
@@ -801,12 +912,12 @@
     </div>
   </div>
 
-  <script src="data/members.js"></script>
-  <script src="data/projects.js"></script>
-  <script src="data/collaborators.js"></script>
-  <script src="data/publications.js"></script>
-  <script src="data/news.js"></script>
-  <script src="data/gallery.js"></script>
+  <!-- Inject data globals needed by script.js interaction logic -->
+  <script>
+  const RESEARCH_AREAS = {{ research | json | safe }};
+  const NEWS           = {{ collections.news | newsJson | safe }};
+  const GALLERY        = {{ collections.gallery | galleryJson | safe }};
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

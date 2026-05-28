@@ -1,0 +1,30 @@
+{
+  "ongoing": [
+    {
+      "title":  "D3C: Direct Data-Driven Control for Safe and Efficient Autonomous Systems",
+      "period": "2026.1 – 2027.1",
+      "agency": "Seoul National University (SNU)"
+    },
+    {
+      "title":  "Data-Driven Safe and Adaptive Control of Autonomous Systems",
+      "period": "2025.9 – 2027.8",
+      "agency": "Seoul National University (SNU)"
+    },
+    {
+      "title":  "ReUSV-41",
+      "period": "2025.9 – 2028.10",
+      "agency": "Korea Research Institute for Defense Technology Planning and Advancement (KRIT)"
+    },
+    {
+      "title":  "UAVRC",
+      "period": "2025.9 – 2027.5",
+      "agency": "National Research Foundation of Korea (NRF)"
+    },
+    {
+      "title":  "TD-21",
+      "period": "2025.9 – 2027.2",
+      "agency": "Agency for Defense Development (ADD)"
+    }
+  ],
+  "completed": []
+}

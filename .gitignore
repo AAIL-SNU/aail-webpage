@@ -1,2 +1,6 @@
 .claude/
 *.Identifier
+node_modules/
+_site/
+.cache/
+.omc

@@ -1,0 +1,59 @@
+{% macro memberCard(mem, avatarKey, defaultRole) %}
+<div class="member-card{% if mem.highlight %} member-card-highlight{% endif %}">
+  <div class="member-photo-wrap">
+    {% if mem.photo %}
+    <img src="{{ mem.photo }}" alt="{{ mem.name }}" class="member-photo"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+    {% endif %}
+    <div class="member-avatar avatar-{{ avatarKey }}"{% if mem.photo %} style="display:none"{% endif %}>{{ mem.initials }}</div>
+  </div>
+  <div class="member-info">
+    <p class="member-name">{{ mem.name }}{% if mem.nameKr %}<span class="member-name-kr">{{ mem.nameKr }}</span>{% endif %}</p>
+    <p class="member-role">{{ mem.role if mem.role else defaultRole }}{% if mem.badge %}<span class="member-badge">{{ mem.badge }}</span>{% endif %}</p>
+    {% if mem.note %}<p class="member-note">{{ mem.note }}</p>{% endif %}
+    {% if mem.email %}<a class="member-email" href="mailto:{{ mem.email }}">{{ mem.email }}</a>{% endif %}
+    {% if mem.interests and mem.interests.length > 0 %}
+    <div class="member-interests">
+      {% for tag in mem.interests %}<span class="member-interest-tag">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro pubItem(pub) %}
+<div class="pub-item fade-in" data-type="{{ pub.type }}">
+  <div class="pub-badge {{ pub.type }}">
+    {%- if pub.type == 'journal' %}Journal
+    {%- elif pub.type == 'conference' %}Conference
+    {%- else %}Preprint{% endif -%}
+  </div>
+  <div class="pub-content">
+    <a href="{{ pub.computedUrl }}" target="_blank" rel="noopener" class="pub-title">{{ pub.title }}</a>
+    <p class="pub-authors">{{ pub.authors }}</p>
+    <p class="pub-venue">{{ pub.venue | safe }}</p>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro projCards(list, filter) %}
+{% if list | length == 0 %}
+<p class="proj-empty fade-in">No {{ filter }} projects at this time.</p>
+{% else %}
+{% for p in list %}
+<div class="proj-card fade-in" style="animation-delay:{{ loop.index0 * 60 }}ms">
+  <div class="proj-card-num">{{ loop.index | padNum }}</div>
+  <div class="proj-card-body">
+    <h3 class="proj-card-title">{{ p.title }}</h3>
+    <dl class="proj-meta">
+      <dt>Period</dt><dd>{{ p.period }}</dd>
+      <dt>Funding Agency</dt><dd>{{ p.agency }}</dd>
+      {% if p.program %}<dt>Program</dt><dd>{{ p.program }}</dd>{% endif %}
+      {% if p.institution %}<dt>Institution</dt><dd>{{ p.institution }}</dd>{% endif %}
+      {% if p.note %}<dt>Note</dt><dd>{{ p.note }}</dd>{% endif %}
+    </dl>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endmacro %}

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rimi1014.github.io/aail-webpage/sitemap.xml
+Sitemap: https://aail-snu.github.io/aail-webpage/sitemap.xml
