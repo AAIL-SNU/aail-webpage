@@ -8,7 +8,7 @@
     ],
     "msc": [
       { "initials": "JK", "name": "Junho Kim",     "nameKr": "김준호", "email": "junho9812@snu.ac.kr",    "note": "Sep 2026– (pre-MSc research Mar 2026–Aug 2026)", "link": "https://www.linkedin.com/in/junho-kim-882a91261/" },
-      { "initials": "SO", "name": "Seungseok Oh",  "nameKr": "오승석", "email": "seungseok.oh@snu.ac.kr",  "note": "Sep 2026– (pre-MSc research Nov 2025–Aug 2026)", "link": "https://seungseokoh.com" },
+      { "initials": "SO", "name": "Seungseok Oh",  "nameKr": "오승석", "email": "seungseok.oh@snu.ac.kr",  "note": "Sep 2026– (pre-MSc research Nov 2025–Aug 2026)", "link": "https://seungseokoh.com", "photo": "images/members/seungseokoh.jpg" },
       { "initials": "AP", "name": "Alim Pyon", "nameKr": "편아림", "email": "alimpyon@snu.ac.kr", "note": "Mar 2026–", "photo": "images/members/alimpyon.jpg" }
     ],
     "bsc": [

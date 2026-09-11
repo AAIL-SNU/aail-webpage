@@ -15,6 +15,7 @@ function switchPage(targetId, pushHistory) {
 
   if (targetId === 'page-home') {
     navbar.classList.remove('scrolled');
+    setTimeout(resizeCanvas, 10);
   } else {
     navbar.classList.add('scrolled');
   }
@@ -152,6 +153,100 @@ if (heroScrollHint) {
     const teaserSection = document.querySelector('#page-home .teaser-section');
     if (teaserSection) teaserSection.scrollIntoView({ behavior: 'smooth' });
   });
+}
+
+// ── HERO CANVAS (star-field) ─────────────────────────────────
+const canvas = document.getElementById('hero-canvas');
+const ctx    = canvas ? canvas.getContext('2d') : null;
+const stars  = [];
+const STAR_COUNT = 150;
+
+function resizeCanvas() {
+  if (!canvas) return;
+  canvas.width  = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+}
+
+function createStar() {
+  const roll = Math.random();
+  let r, da;
+  if (roll < 0.12) {
+    r  = Math.random() * 1.2 + 1.8;
+    da = (Math.random() - 0.5) * 0.010;
+  } else if (roll < 0.50) {
+    r  = Math.random() * 0.6 + 0.8;
+    da = (Math.random() - 0.5) * 0.005;
+  } else {
+    r  = Math.random() * 0.55 + 0.15;
+    da = (Math.random() - 0.5) * 0.003;
+  }
+  return {
+    x:  Math.random() * canvas.width,
+    y:  Math.random() * canvas.height,
+    r, a: Math.random(), da,
+    vx: (Math.random() - 0.5) * 0.08,
+    vy: (Math.random() - 0.5) * 0.08,
+  };
+}
+
+function initCanvas() {
+  if (!canvas) return;
+  resizeCanvas();
+  stars.length = 0;
+  for (let i = 0; i < STAR_COUNT; i++) stars.push(createStar());
+}
+
+function drawCanvas() {
+  if (!ctx) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  stars.forEach(s => {
+    s.x += s.vx;
+    s.y += s.vy;
+    s.a += s.da;
+    s.a = Math.max(0.05, Math.min(1, s.a));
+    if (s.a <= 0.05 || s.a >= 1) s.da *= -1;
+    if (s.x < 0) s.x = canvas.width;
+    if (s.x > canvas.width) s.x = 0;
+    if (s.y < 0) s.y = canvas.height;
+    if (s.y > canvas.height) s.y = 0;
+
+    // Glow halo for larger stars
+    if (s.r > 1.4) {
+      const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 5);
+      glow.addColorStop(0, `rgba(255,255,255,${s.a * 0.22})`);
+      glow.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r * 5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Core dot
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${s.a})`;
+    ctx.fill();
+
+    // Cross sparkle for the brightest large stars
+    if (s.r > 2.2) {
+      ctx.strokeStyle = `rgba(255,255,255,${s.a * 0.5})`;
+      ctx.lineWidth = 0.5;
+      const len = s.r * 4;
+      ctx.beginPath();
+      ctx.moveTo(s.x - len, s.y); ctx.lineTo(s.x + len, s.y);
+      ctx.moveTo(s.x, s.y - len); ctx.lineTo(s.x, s.y + len);
+      ctx.stroke();
+    }
+  });
+
+  requestAnimationFrame(drawCanvas);
+}
+
+if (canvas) {
+  window.addEventListener('resize', resizeCanvas);
+  initCanvas();
+  drawCanvas();
 }
 
 // ── ABOUT TABS ────────────────────────────────────────────────
