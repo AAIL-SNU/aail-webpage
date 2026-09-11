@@ -1345,19 +1345,19 @@ a.pub-title:hover { color: var(--blue); text-decoration: underline; }
 .member-photo-wrap {
   flex-shrink: 0;
   position: relative;
-  width: 116px;
-  height: 116px;
+  width: 174px;
+  height: 174px;
 }
 .member-photo {
-  width: 116px;
-  height: 116px;
+  width: 174px;
+  height: 174px;
   border-radius: var(--radius);
   object-fit: cover;
 }
 
 .member-avatar {
-  width: 116px;
-  height: 116px;
+  width: 174px;
+  height: 174px;
   border-radius: var(--radius);
   background: linear-gradient(135deg, var(--navy), var(--blue));
   display: flex;
