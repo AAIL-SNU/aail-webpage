@@ -51,7 +51,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -59,7 +59,11 @@
   <!-- ── NAVIGATION ─────────────────────────────────────────── -->
   <header id="navbar">
     <nav class="nav-inner">
-      <a class="nav-logo nav-tab" href="#" data-target="page-home">AAIL</a>
+      <div class="nav-brand">
+        <a class="nav-logo nav-tab" href="#" data-target="page-home">
+          <img src="images/aail-logo.png" alt="AAIL" />
+        </a>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -67,8 +71,12 @@
         <li class="has-dropdown">
           <a href="#" class="nav-tab" data-target="page-about">About</a>
           <ul class="nav-dropdown">
-            <li><a href="#" class="about-subtab" data-subtab="about">About AAIL</a></li>
+            <li><a href="#" class="about-subtab" data-subtab="pi">Namhoon Cho</a></li>
+            <li><a href="#" class="about-subtab" data-subtab="members">Members</a></li>
+            <li><a href="#" class="about-subtab" data-subtab="alumni">Alumni</a></li>
+            <li><a href="#" class="about-subtab" data-subtab="collaborators">Collaborators</a></li>
             <li><a href="#" class="about-subtab" data-subtab="courses">Courses</a></li>
+            <li><a href="#" class="about-subtab" data-subtab="legacy">Legacy of FDCL</a></li>
           </ul>
         </li>
         <li class="has-dropdown">
@@ -76,22 +84,8 @@
           <ul class="nav-dropdown">
             <li><a href="#" class="nav-tab" data-target="page-research">Research Topics</a></li>
             <li><a href="#" class="nav-tab" data-target="page-projects">Projects</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown">
-          <a href="#" class="nav-tab" data-target="page-members">Members</a>
-          <ul class="nav-dropdown">
-            <li><a href="#" class="member-subtab" data-subtab="pi">Principal Investigator</a></li>
-            <li><a href="#" class="member-subtab" data-subtab="students">Students</a></li>
-            <li><a href="#" class="member-subtab" data-subtab="alumni">Alumni</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown">
-          <a href="#" class="nav-tab" data-target="page-publications">Publications</a>
-          <ul class="nav-dropdown">
-            <li><a href="#" class="pub-filtertab" data-filter="journal">Journal</a></li>
-            <li><a href="#" class="pub-filtertab" data-filter="conference">Conference</a></li>
-            <li><a href="#" class="pub-filtertab" data-filter="preprint">Preprint</a></li>
+            <li><a href="#" class="nav-tab" data-target="page-publications">Publications</a></li>
+            <li><a href="#" class="nav-tab" data-target="page-seminar">Seminar</a></li>
           </ul>
         </li>
         <li class="has-dropdown">
@@ -111,28 +105,26 @@
     <div id="mega-menu" role="navigation" aria-label="Site sections">
       <div class="mega-inner">
         <div class="mega-col">
-          <a href="#" class="mega-link about-subtab" data-subtab="about">About AAIL</a>
+          <a href="#" class="mega-link about-subtab" data-subtab="pi">Namhoon Cho</a>
+          <a href="#" class="mega-link about-subtab" data-subtab="members">Members</a>
+          <a href="#" class="mega-link about-subtab" data-subtab="alumni">Alumni</a>
+          <a href="#" class="mega-link about-subtab" data-subtab="collaborators">Collaborators</a>
           <a href="#" class="mega-link about-subtab" data-subtab="courses">Courses</a>
+          <a href="#" class="mega-link about-subtab" data-subtab="legacy">Legacy of FDCL</a>
         </div>
         <div class="mega-col">
           <a href="#" class="nav-tab mega-link" data-target="page-research">Research Topics</a>
           <a href="#" class="nav-tab mega-link" data-target="page-projects">Projects</a>
-        </div>
-        <div class="mega-col">
-          <a href="#" class="mega-link mega-subtab" data-target="page-members" data-subtab="pi">Professor</a>
-          <a href="#" class="mega-link mega-subtab" data-target="page-members" data-subtab="students">Students</a>
-          <a href="#" class="mega-link mega-subtab" data-target="page-members" data-subtab="alumni">Alumni</a>
-        </div>
-        <div class="mega-col">
-          <a href="#" class="mega-link mega-filtertab" data-target="page-publications" data-filter="journal">Journal</a>
-          <a href="#" class="mega-link mega-filtertab" data-target="page-publications" data-filter="conference">Conference</a>
-          <a href="#" class="mega-link mega-filtertab" data-target="page-publications" data-filter="preprint">Preprint</a>
+          <a href="#" class="nav-tab mega-link" data-target="page-publications">Publications</a>
+          <a href="#" class="nav-tab mega-link" data-target="page-seminar">Seminar</a>
         </div>
         <div class="mega-col">
           <a href="#" class="mega-link mega-boardtab" data-target="page-board" data-subtab="news">News</a>
           <a href="#" class="mega-link mega-boardtab" data-target="page-board" data-subtab="gallery">Gallery</a>
         </div>
-        <div class="mega-col"></div>
+        <div class="mega-col">
+          <a href="#" class="mega-link nav-tab" data-target="page-contact">Contact</a>
+        </div>
       </div>
     </div>
   </header>
@@ -145,18 +137,10 @@
 
       <!-- Hero -->
       <div id="hero">
-        <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
-          <p class="hero-eyebrow">Seoul National University</p>
-          <h1 class="hero-title"><span class="hero-accent">A</span>erospace <span class="hero-accent">A</span>utonomy &amp;<br /><span class="hero-accent">I</span>ntelligence <span class="hero-accent">L</span>ab</h1>
-          <p class="hero-sub">AAIL &nbsp;|&nbsp; Department of Aerospace Engineering</p>
-          <p class="hero-statement">Safe and Efficient Aerospace Systems under Uncertainty</p>
-          <div class="hero-tags">
-            <span class="hero-tag">Control</span>
-            <span class="hero-tag">Optimization</span>
-            <span class="hero-tag">Machine Learning</span>
-            <span class="hero-tag">Aerospace &amp; Robotic Autonomous Systems</span>
-          </div>
+          <img src="images/aail-logo.png" alt="AAIL — Aerospace Autonomy &amp; Intelligence Laboratory" class="hero-logo" />
+          <h1 class="hero-welcome">Welcome to AAIL</h1>
+          <p class="hero-statement">The Aerospace Autonomy and Intelligence Laboratory (AAIL) is a research group in the <a href="https://aerospace.snu.ac.kr/en" target="_blank" rel="noopener">Department of Aerospace Engineering</a> at <a href="https://www.snu.ac.kr" target="_blank" rel="noopener">Seoul National University</a>, directed by <a href="#" class="about-subtab" data-subtab="pi">Namhoon Cho</a>.</p>
         </div>
         <button class="scroll-hint" id="hero-scroll-hint" aria-label="Scroll down">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -164,66 +148,6 @@
           </svg>
         </button>
       </div>
-
-      <!-- Teaser: Research -->
-      <section class="section teaser-section teaser-research">
-        <div class="container">
-          <div class="teaser-header">
-            <div>
-              <span class="section-kicker">Research</span>
-              <h2 class="teaser-title">What We Work On</h2>
-            </div>
-            <a href="#" class="btn btn-outline nav-tab" data-target="page-research">View All Research →</a>
-          </div>
-          <div class="research-areas">
-            <div class="research-area-card">
-              <h3 class="research-area-title">Safe Control under Uncertainty</h3>
-              <p class="research-area-desc">Developing provably safe control algorithms that remain stable and reliable under model uncertainty and disturbances.</p>
-              <div class="research-area-tags">
-                <span class="research-area-tag">CBF</span>
-                <span class="research-area-tag">Robust Control</span>
-                <span class="research-area-tag">Safety Guarantees</span>
-              </div>
-            </div>
-            <div class="research-area-card">
-              <h3 class="research-area-title">Learning-Based Guidance and Control</h3>
-              <p class="research-area-desc">Integrating machine learning with classical control for adaptive, intelligent guidance in aerospace applications.</p>
-              <div class="research-area-tags">
-                <span class="research-area-tag">Adaptive Control</span>
-                <span class="research-area-tag">Meta-Learning</span>
-                <span class="research-area-tag">Neural Control</span>
-              </div>
-            </div>
-            <div class="research-area-card">
-              <h3 class="research-area-title">Optimization for Aerospace Systems</h3>
-              <p class="research-area-desc">Formulating and solving optimal control and trajectory planning problems for complex aerospace missions.</p>
-              <div class="research-area-tags">
-                <span class="research-area-tag">Optimal Control</span>
-                <span class="research-area-tag">Trajectory Optimization</span>
-                <span class="research-area-tag">NLP</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Teaser: Recent Publications -->
-      <section class="section section-alt teaser-section teaser-publications">
-        <div class="container">
-          <div class="teaser-header">
-            <div>
-              <span class="section-kicker">Publications</span>
-              <h2 class="teaser-title">Recent Work</h2>
-            </div>
-            <a href="#" class="btn btn-outline nav-tab" data-target="page-publications">View All Publications →</a>
-          </div>
-          <div id="pub-teaser">
-            {% for pub in pubTeaser %}
-            {{ macros.pubItem(pub) }}
-            {% endfor %}
-          </div>
-        </div>
-      </section>
 
       <!-- Teaser: News -->
       <section class="section teaser-section teaser-news">
@@ -249,7 +173,7 @@
                 <div class="news-card-body">
                   <p class="news-card-date">{{ item.data.month }} {{ item.data.year }}</p>
                   <p class="news-card-title">{{ item.data.title }}</p>
-                  <p class="news-card-text">{{ item.templateContent | striptags }}</p>
+                  <p class="news-card-text">{{ item.templateContent | striptags | safe }}</p>
                 </div>
               </div>
               {% endfor %}
@@ -273,78 +197,186 @@
             <div class="section-header-line"></div>
           </div>
           <div class="about-tabs fade-in">
-            <button class="about-tab active" data-panel="about">About AAIL</button>
+            <button class="about-tab active" data-panel="pi">Namhoon Cho</button>
+            <button class="about-tab" data-panel="members">Members</button>
+            <button class="about-tab" data-panel="alumni">Alumni</button>
+            <button class="about-tab" data-panel="collaborators">Collaborators</button>
             <button class="about-tab" data-panel="courses">Courses</button>
+            <button class="about-tab" data-panel="legacy">Legacy of FDCL</button>
           </div>
 
-          <!-- Panel: About AAIL -->
-          <div class="about-panel active" id="about-panel-about">
-
-            <div class="about-intro fade-in">
-              <img src="images/aail_kickoff.jpg" alt="AAIL Kickoff" class="about-kickoff-img" loading="lazy" />
-              <div class="about-text">
-                <h2 class="about-subtitle">Intelligent Systems for the Future of Aerospace</h2>
-                <p>The <strong>Aerospace Autonomy and Intelligence Laboratory (AAIL)</strong> is a research group within the Department of Aerospace Engineering at Seoul National University, led by Professor Namhoon Cho.</p>
-                <p>We develop the theoretical foundations and practical algorithms for autonomous aerospace systems — spanning guidance &amp; control, machine learning, and intelligent decision-making. Our work bridges mathematical rigor with real-world aerospace engineering challenges.</p>
+          <!-- Panel: Namhoon Cho (PI) -->
+          <div class="about-panel active" id="about-panel-pi">
+            <div class="pi-profile fade-in">
+              <div class="pi-profile-card">
+                <div class="pi-avatar">
+                  <img src="images/ncho.jpg" alt="Prof. Namhoon Cho" class="pi-photo" loading="lazy"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                  <div class="pi-avatar-initials"></div>
+                </div>
+                <h2 class="pi-name">Namhoon Cho</h2>
+                <h2 class="pi-name">조남훈</h2>
+                <div class="pi-links">
+                  <a href="http://aail.snu.ac.kr/ncho.html" target="_blank" class="pi-link">Faculty Page ↗</a>
+                </div>
+              </div>
+              <div class="pi-intro">
+                <div class="pi-section fade-in">
+                  <div class="pi-section-label">Current<br />Position</div>
+                  <ul class="pi-section-list">
+                    <li>Assistant Professor, Aerospace Autonomy and Intelligence Laboratory, Department of Aerospace Engineering, College of Engineering, Seoul National University</li>
+                    <li><em>Affiliation:</em> Artificial Intelligence Institute; Institute of Advanced Aerospace Technology</li>
+                  </ul>
+                </div>
+                <div class="pi-section fade-in">
+                  <div class="pi-section-label">Education</div>
+                  <ul class="pi-section-list">
+                    <li>(2012.9~2017.2) Ph.D. in Mechanical and Aerospace Engineering, Seoul National University</li>
+                    <li>(2009.3~2012.8) B.S. in Mechanical and Aerospace Engineering, Seoul National University</li>
+                    <li>(2007.3~2009.2) Seoul Science High School</li>
+                  </ul>
+                </div>
+                <div class="pi-social-links pi-social-links-top">
+                  <a href="mailto:namhoon.cho@snu.ac.kr" class="pi-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg>
+                    namhoon.cho@snu.ac.kr
+                  </a>
+                  <a href="https://scholar.google.co.uk/citations?user=DhdeDm8AAAAJ" target="_blank" class="pi-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+                    Scholar
+                  </a>
+                  <a href="https://www.researchgate.net/profile/Namhoon_Cho" target="_blank" class="pi-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z"/></svg>
+                    ResearchGate
+                  </a>
+                  <a href="https://www.linkedin.com/in/namhoon-cho-61b856159" target="_blank" class="pi-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                  </a>
+                  <a href="https://orcid.org/0000-0001-9999-9501" target="_blank" class="pi-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919zm1.444 1.303v7.444h2.297c3.272 0 3.853-2.203 3.853-3.722 0-2.016-1.284-3.722-3.584-3.722z"/></svg>
+                    ORCID
+                  </a>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=56654774400" target="_blank" class="pi-social-link">Scopus</a>
+                  <a href="https://github.com/nhcho91" target="_blank" class="pi-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    GitHub
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div class="about-vision fade-in">
-              <h3 class="about-vision-title">Research Statement</h3>
-              <img src="images/research interest.png" alt="AAIL Research Vision" class="about-vision-img" loading="lazy" />
-            </div>
-
-            <div class="legacy-section fade-in">
-              <h3 class="about-vision-title">Legacy of FDCL</h3>
-              <p class="legacy-desc">The Aerospace Autonomy and Intelligence Laboratory (AAIL) represents the third generation at Seoul National University, continuing the Flight Dynamics and Control Laboratory's (FDCL) academic tradition spanning seven decades. The laboratory combines the precision of traditional control engineering with the transformative power of modern computing.</p>
-              <img src="images/legacy.jpg" alt="Legacy of FDCL" class="about-vision-img legacy-img" loading="lazy" />
-              <div class="legacy-grid">
-                <div class="legacy-card">
-                  <span class="legacy-gen">1st Generation</span>
-                  <h4 class="legacy-name">Prof. Sang-Kyu Wie</h4>
-                  <p class="legacy-period">Dec 1955 – Feb 1991</p>
-                  <ul class="legacy-edu">
-                    <li>PhD, Seoul National University (1967)</li>
-                    <li>MSc, University of Minnesota (1959)</li>
-                    <li>BSc, Seoul National University (1950)</li>
-                  </ul>
-                </div>
-                <div class="legacy-card">
-                  <span class="legacy-gen">2nd Generation</span>
-                  <h4 class="legacy-name">Prof. Youdan Kim</h4>
-                  <p class="legacy-period">Feb 1992 – Aug 2025</p>
-                  <ul class="legacy-edu">
-                    <li>PhD, Texas A&amp;M University (1991)</li>
-                    <li>MSc, Seoul National University (1985)</li>
-                    <li>BSc, Seoul National University (1983)</li>
-                  </ul>
-                </div>
-                <div class="legacy-card legacy-card-current">
-                  <span class="legacy-gen">3rd Generation</span>
-                  <h4 class="legacy-name">Prof. Namhoon Cho</h4>
-                  <p class="legacy-period">Sep 2025 – Present</p>
-                  <ul class="legacy-edu">
-                    <li>PhD, Seoul National University (2017)</li>
-                    <li>BSc, Seoul National University (2012)</li>
-                  </ul>
+            <div class="pi-sections">
+              <div class="pi-section fade-in">
+                <div class="pi-section-label">Biography</div>
+                <div class="pi-section-bio">
+                  <p class="pi-intro-bio">Namhoon Cho is Assistant Professor in the Department of Aerospace Engineering at Seoul National University, South Korea since September 2025. He received his BSc and PhD degrees in Mechanical and Aerospace Engineering from Seoul National University, South Korea, in August 2012 and February 2017, respectively. Previously, he was Lecturer in Control and Optimisation in the Centre for Assured and Connected Autonomy at Cranfield University, United Kingdom from November 2024 to August 2025. He was a research fellow at Cranfield University from January 2021 to November 2024 with the award of a Cranfield 75th Anniversary Fellowship to pursue research on AI for Exploitation of Data-Driven Approach in Control for Aerospace Systems. He was a senior researcher in the 1st R&amp;D Institute, Agency for Defense Development, South Korea, from March 2019 to December 2020, where he was involved in research and development of guidance and control systems for missiles and developed design tools based on optimisation techniques. He was a research fellow in the Department of Mechanical and Aerospace Engineering, Seoul National University, South Korea, from March 2017 to February 2019. He develops constructive methodologies to design control algorithms for aerospace and robotic systems.</p>
+                  <div class="pi-intro-interests">
+                    <p class="pi-intro-interests-label">Research Interests</p>
+                    <p class="pi-intro-interests-text">Control-theoretic design of optimisation algorithms, robust adaptive control with online model learning, data-driven safe control frameworks, learning-enabled control with safety assurance, and automated control engineering.</p>
+                  </div>
                 </div>
               </div>
+              <div class="pi-section fade-in">
+                <div class="pi-section-label">Experience</div>
+                <ul class="pi-section-list">
+                  <li>(2025.9.1~Present) Assistant Professor, Department of Aerospace Engineering, Seoul National University</li>
+                  <li>(2025.9.1~Present) Visiting Academic, Centre for Assured and Connected Autonomy, Cranfield University</li>
+                  <li>(2024.11.29~2025.8.12) Lecturer in Control and Optimisation, Centre for Assured and Connected Autonomy, Cranfield University</li>
+                  <li>(2024.10.25~Present) Academic Advisor, Mechanical AI, Inc.</li>
+                  <li>(2021.1.18~2024.11.28) Research Fellow, Cranfield University</li>
+                  <li>(2019.3.1~2020.12.31) Senior Researcher, Agency for Defense Development</li>
+                  <li>(2017.12.1~2019.2.28) Postdoctoral Research Fellow, Seoul National University</li>
+                  <li>(2017.3.1~2018.8.31) Researcher, Automation and Systems Research Institute, Seoul National University</li>
+                  <li>(2015.11.14~2016.4.28) Visiting Research Student, Cranfield University</li>
+                  <li>(2008.8.19~2008.8.28) The 2nd International Olympiad on Astronomy and Astrophysics (IOAA)</li>
+                  <li>(2007.11.21~2007.11.29) The 3rd Asian-Pacific Astronomy Olympiad (APAO)</li>
+                </ul>
+              </div>
+              <div class="pi-section fade-in">
+                <div class="pi-section-label">Honours &amp;<br />Awards &amp;<br />Scholarships</div>
+                <ul class="pi-section-list">
+                  <li>Excellent Reviewer for JGCD (2025)</li>
+                  <li>Fellow of Advance HE (FHEA) (2025.5)</li>
+                  <li>Associate Fellow of Advance HE (AFHEA) (2024.11)</li>
+                  <li>Cranfield 75th Anniversary Fellowship (2021.1)</li>
+                  <li>Outstanding Doctoral Dissertation Award, Seoul National University (2017.2)</li>
+                  <li>Summa Cum Laude Graduate, Seoul National University (2012.8)</li>
+                  <li>STEM Honor Society Membership</li>
+                  <li>Academic Excellence Scholarship</li>
+                </ul>
+              </div>
+              <div class="pi-section fade-in">
+                <div class="pi-section-label">Media</div>
+                <ul class="pi-section-list">
+                  <li>(2021.6) Early Career Researcher Interview, "Unified Design Frameworks for Control and Estimation with Aerospace Applications," Mechanical Engineering and Robotics Research Information Center, Written Interview <em>(in Korean)</em></li>
+                </ul>
+              </div>
             </div>
+          </div><!-- /about-panel-pi -->
 
+          <!-- Panel: Members (Students) -->
+          <div class="about-panel" id="about-panel-members">
+            <div id="students-container">
+              {% set studentGroups = [
+                { label: 'PhD Students',  members: members.snu.phd, avatarKey: 'phd', defaultRole: 'PhD Student'  },
+                { label: 'MSc Students',  members: members.snu.msc, avatarKey: 'msc', defaultRole: 'MSc Student'  },
+                { label: 'BSc Students',  members: members.snu.bsc, avatarKey: 'bsc', defaultRole: 'BSc Student'  }
+              ] %}
+              {% for group in studentGroups %}
+              {% if group.members | length > 0 %}
+              <div class="members-group fade-in">
+                <h3 class="members-group-title">{{ group.label }}</h3>
+                <div class="members-subgroup">
+                  <div class="members-grid members-grid-cols3">
+                    {% for mem in group.members %}
+                    {{ macros.memberCard(mem, group.avatarKey, group.defaultRole) }}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Panel: Alumni -->
+          <div class="about-panel" id="about-panel-alumni">
+            <div id="alumni-container">
+              {% set alumniMembers = members.cranfield.phd %}
+              {% if alumniMembers | length > 0 %}
+              <div class="members-group fade-in">
+                <h3 class="members-group-title">PhD Alumni <span class="members-group-note">(Co-supervised, Cranfield University)</span></h3>
+                <div class="members-subgroup">
+                  <div class="members-grid members-grid-cols3">
+                    {% for mem in alumniMembers %}
+                    {{ macros.memberCard(mem, 'phd', 'PhD Alumni') }}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              {% else %}
+              <p style="color:var(--text-lt);font-size:.9rem;padding:16px 0;">No alumni records yet.</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Panel: Collaborators -->
+          <div class="about-panel" id="about-panel-collaborators">
             <div class="collab-section fade-in">
-              <h3 class="collab-title">Collaborators</h3>
-              <div class="collab-grid" id="collab-grid">
+              <ul class="collab-list" id="collab-grid">
                 {% for c in collaborators %}
-                  {% if c.url %}
-                    <a class="collab-chip" href="{{ c.url }}" target="_blank" rel="noopener"><span class="collab-name">{{ c.name }}</span></a>
-                  {% else %}
-                    <div class="collab-chip"><span class="collab-name">{{ c.name }}</span></div>
-                  {% endif %}
+                  <li>
+                    {% if c.url %}
+                      <a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }}</a>
+                    {% else %}
+                      <span>{{ c.name }}</span>
+                    {% endif %}
+                  </li>
                 {% endfor %}
-              </div>
+              </ul>
             </div>
-
-          </div><!-- /about-panel-about -->
+          </div>
 
           <!-- Panel: Courses -->
           <div class="about-panel" id="about-panel-courses">
@@ -441,211 +473,65 @@
 
           </div><!-- /about-panel-courses -->
 
+          <!-- Panel: Legacy of FDCL -->
+          <div class="about-panel" id="about-panel-legacy">
+            <div class="legacy-section fade-in">
+              <p class="legacy-desc">The Aerospace Autonomy and Intelligence Laboratory (AAIL) represents the third generation at Seoul National University, continuing the Flight Dynamics and Control Laboratory's (FDCL) academic tradition spanning seven decades. The laboratory combines the precision of traditional control engineering with the transformative power of modern computing.</p>
+              <p class="legacy-desc legacy-desc-kr">항공우주 자율지능 연구실(AAIL)은 서울대학교에서 이어져 온 탁월한 학문적 계보의 3세대 연구실입니다. AAIL은 지난 70년간 대한민국 항공우주 제어 연구의 흐름을 이끌어 온 지적 산실인 비행역학 및 제어 연구실(FDCL)의 학문적 전통을 자랑스럽게 계승하고 있습니다. 선대 연구진이 확립한 수월성의 기준을 바탕으로, AAIL은 전통적인 제어공학의 엄밀함과 현대 컴퓨팅의 혁신적 역량을 융합해 나가고 있습니다.</p>
+              <img src="images/legacy.jpg" alt="Legacy of FDCL" class="about-vision-img legacy-img" loading="lazy" />
+              <div class="legacy-grid">
+                <div class="legacy-card">
+                  <span class="legacy-gen">1st Generation</span>
+                  <h4 class="legacy-name">Prof. Sang-Kyu Wie</h4>
+                  <p class="legacy-period">Dec 1955 – Feb 1991</p>
+                  <ul class="legacy-edu">
+                    <li>PhD, Seoul National University (1967)</li>
+                    <li>MSc, University of Minnesota (1959)</li>
+                    <li>BSc, Seoul National University (1950)</li>
+                  </ul>
+                </div>
+                <div class="legacy-card">
+                  <span class="legacy-gen">2nd Generation</span>
+                  <h4 class="legacy-name">Prof. Youdan Kim</h4>
+                  <p class="legacy-period">Feb 1992 – Aug 2025</p>
+                  <ul class="legacy-edu">
+                    <li>PhD, Texas A&amp;M University (1991)</li>
+                    <li>MSc, Seoul National University (1985)</li>
+                    <li>BSc, Seoul National University (1983)</li>
+                  </ul>
+                </div>
+                <div class="legacy-card legacy-card-current">
+                  <span class="legacy-gen">3rd Generation</span>
+                  <h4 class="legacy-name">Prof. Namhoon Cho</h4>
+                  <p class="legacy-period">Sep 2025 – Present</p>
+                  <ul class="legacy-edu">
+                    <li>PhD, Seoul National University (2017)</li>
+                    <li>BSc, Seoul National University (2012)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
     </div>
 
     <!-- RESEARCH ───────────────────────────────────────────── -->
     <div class="page" id="page-research">
-      <div id="research-overview">
-        <section class="section section-alt research-header-section">
-          <div class="container">
-            <div class="section-header fade-in">
-              <div class="section-num">02</div>
-              <div class="section-header-text">
-                <span class="section-kicker">Research</span>
-                <h2 class="section-title">What We Work On</h2>
-              </div>
-              <div class="section-header-line"></div>
-            </div>
-            <p class="section-desc fade-in">Our research spans the theory and application of intelligent autonomous systems in aerospace.</p>
-          </div>
-        </section>
-        <div class="research-img-grid" id="research-img-grid">
-          {% for area in research %}
-          <div class="research-img-card" data-delay="{{ loop.index0 }}" onclick="openResearchDetail({{ loop.index0 }})">
-            <div class="research-img-bg" style="background-image: url('{{ area.image }}')"></div>
-            <div class="research-img-overlay"></div>
-            <div class="research-img-content">
-              <div class="research-img-tags">
-                {% for tag in area.tags %}<span class="research-img-tag">{{ tag }}</span>{% endfor %}
-              </div>
-              <h3 class="research-img-title">{{ area.title }}</h3>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      <div id="research-detail-view" style="display:none"></div>
-    </div>
-
-    <!-- MEMBERS ────────────────────────────────────────────── -->
-    <div class="page" id="page-members">
-      <section class="section section-alt">
-        <div class="container">
+      <section class="section">
+        <div class="container container-narrow">
           <div class="section-header fade-in">
+            <div class="section-num">02</div>
             <div class="section-header-text">
-              <span class="section-kicker">People</span>
-              <h2 class="section-title">Lab Members</h2>
+              <span class="section-kicker">Research</span>
+              <h2 class="section-title">What We Work On</h2>
             </div>
             <div class="section-header-line"></div>
           </div>
-
-          <div class="member-tabs fade-in">
-            <button class="member-tab active" data-panel="pi">Principal Investigator</button>
-            <button class="member-tab" data-panel="students">Students</button>
-            <button class="member-tab" data-panel="alumni">Alumni</button>
+          <div class="research-content fade-in">
+            {{ collections.research[0].templateContent | safe }}
           </div>
-
-          <!-- Panel: PI -->
-          <div class="member-panel active" id="panel-pi">
-            <div class="pi-profile fade-in">
-              <div class="pi-profile-card">
-                <div class="pi-avatar">
-                  <img src="images/ncho.jpg" alt="Prof. Namhoon Cho" class="pi-photo" loading="lazy"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-                  <div class="pi-avatar-initials">NC</div>
-                </div>
-                <h2 class="pi-name">Namhoon Cho</h2>
-                <p class="pi-title">Principal Investigator</p>
-                <p class="pi-dept">Assistant Professor<br />Department of Aerospace Engineering<br />Seoul National University</p>
-                <div class="pi-links">
-                  <a href="http://aail.snu.ac.kr/ncho.html" target="_blank" class="pi-link">Faculty Page ↗</a>
-                  <a href="mailto:namhoon.cho@snu.ac.kr" class="pi-link">namhoon.cho@snu.ac.kr</a>
-                </div>
-                <div class="pi-social-links">
-                  <a href="https://scholar.google.co.uk/citations?user=DhdeDm8AAAAJ" target="_blank" class="pi-social-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-                    Scholar
-                  </a>
-                  <a href="https://www.researchgate.net/profile/Namhoon_Cho" target="_blank" class="pi-social-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.193 12.193 0 00-.198 1.284h-2.761c.063-.48.17-.94.322-1.378.386-1.103 1.026-1.961 1.917-2.566C17.468.19 18.49 0 19.586 0zm-7.544 7.757H9.098v8.486h3.217c1.428 0 2.512-.373 3.254-1.12.74-.747 1.112-1.813 1.112-3.196 0-1.332-.368-2.364-1.102-3.095-.735-.732-1.813-1.098-3.237-1.098zm-.235 1.531c.898 0 1.576.242 2.032.726.458.483.687 1.175.687 2.073 0 .942-.234 1.661-.703 2.16-.467.497-1.152.745-2.057.745h-1.48V9.288zm-7.59-4.03a1.013 1.013 0 100 2.026 1.013 1.013 0 000-2.025zM3.6 7.757H1.845v8.486H3.6zm0 0"/></svg>
-                    ResearchGate
-                  </a>
-                  <a href="https://www.linkedin.com/in/namhoon-cho-61b856159" target="_blank" class="pi-social-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    LinkedIn
-                  </a>
-                  <a href="https://orcid.org/0000-0001-9999-9501" target="_blank" class="pi-social-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919zm1.444 1.303v7.444h2.297c3.272 0 3.853-2.203 3.853-3.722 0-2.016-1.284-3.722-3.584-3.722z"/></svg>
-                    ORCID
-                  </a>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=56654774400" target="_blank" class="pi-social-link">Scopus</a>
-                  <a href="https://github.com/nhcho91" target="_blank" class="pi-social-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                    GitHub
-                  </a>
-                </div>
-              </div>
-              <div class="pi-intro">
-                <p class="pi-intro-bio">Namhoon Cho is Assistant Professor in the Department of Aerospace Engineering at Seoul National University, South Korea since September 2025. He received his BSc and PhD degrees in Mechanical and Aerospace Engineering from Seoul National University, South Korea, in August 2012 and February 2017, respectively. Previously, he was Lecturer in Control and Optimisation in the Centre for Assured and Connected Autonomy at Cranfield University, United Kingdom from November 2024 to August 2025. He was a research fellow at Cranfield University from January 2021 to November 2024 with the award of a Cranfield 75th Anniversary Fellowship to pursue research on AI for Exploitation of Data-Driven Approach in Control for Aerospace Systems. He was a senior researcher in the 1st R&amp;D Institute, Agency for Defense Development, South Korea, from March 2019 to December 2020, where he was involved in research and development of guidance and control systems for missiles and developed design tools based on optimisation techniques. He was a research fellow in the Department of Mechanical and Aerospace Engineering, Seoul National University, South Korea, from March 2017 to February 2019. He develops constructive methodologies to design control algorithms for aerospace and robotic systems.</p>
-                <div class="pi-intro-interests">
-                  <p class="pi-intro-interests-label">Research Interests</p>
-                  <p class="pi-intro-interests-text">Control-theoretic design of optimisation algorithms, robust adaptive control with online model learning, data-driven safe control frameworks, learning-enabled control with safety assurance, and automated control engineering.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="pi-sections">
-              <div class="pi-section fade-in">
-                <div class="pi-section-label">Current<br />Position</div>
-                <ul class="pi-section-list">
-                  <li>Assistant Professor, Aerospace Autonomy and Intelligence Laboratory, Department of Aerospace Engineering, College of Engineering, Seoul National University</li>
-                  <li><em>Affiliation:</em> Artificial Intelligence Institute; Institute of Advanced Aerospace Technology</li>
-                </ul>
-              </div>
-              <div class="pi-section fade-in">
-                <div class="pi-section-label">Education</div>
-                <ul class="pi-section-list">
-                  <li>(2012.9~2017.2) Ph.D. in Mechanical and Aerospace Engineering, Seoul National University</li>
-                  <li>(2009.3~2012.8) B.S. in Mechanical and Aerospace Engineering, Seoul National University</li>
-                  <li>(2007.3~2009.2) Seoul Science High School</li>
-                </ul>
-              </div>
-              <div class="pi-section fade-in">
-                <div class="pi-section-label">Experience</div>
-                <ul class="pi-section-list">
-                  <li>(2025.9.1~Present) Assistant Professor, Department of Aerospace Engineering, Seoul National University</li>
-                  <li>(2025.9.1~Present) Visiting Academic, Centre for Assured and Connected Autonomy, Cranfield University</li>
-                  <li>(2024.11.29~2025.8.12) Lecturer in Control and Optimisation, Centre for Assured and Connected Autonomy, Cranfield University</li>
-                  <li>(2024.10.25~Present) Academic Advisor, Mechanical AI, Inc.</li>
-                  <li>(2021.1.18~2024.11.28) Research Fellow, Cranfield University</li>
-                  <li>(2019.3.1~2020.12.31) Senior Researcher, Agency for Defense Development</li>
-                  <li>(2017.12.1~2019.2.28) Postdoctoral Research Fellow, Seoul National University</li>
-                  <li>(2017.3.1~2018.8.31) Researcher, Automation and Systems Research Institute, Seoul National University</li>
-                  <li>(2015.11.14~2016.4.28) Visiting Research Student, Cranfield University</li>
-                  <li>(2008.8.19~2008.8.28) The 2nd International Olympiad on Astronomy and Astrophysics (IOAA)</li>
-                  <li>(2007.11.21~2007.11.29) The 3rd Asian-Pacific Astronomy Olympiad (APAO)</li>
-                </ul>
-              </div>
-              <div class="pi-section fade-in">
-                <div class="pi-section-label">Honours &amp;<br />Awards &amp;<br />Scholarships</div>
-                <ul class="pi-section-list">
-                  <li>Excellent Reviewer for JGCD (2025)</li>
-                  <li>Fellow of Advance HE (FHEA) (2025.5)</li>
-                  <li>Associate Fellow of Advance HE (AFHEA) (2024.11)</li>
-                  <li>Cranfield 75th Anniversary Fellowship (2021.1)</li>
-                  <li>Outstanding Doctoral Dissertation Award, Seoul National University (2017.2)</li>
-                  <li>Summa Cum Laude Graduate, Seoul National University (2012.8)</li>
-                  <li>STEM Honor Society Membership</li>
-                  <li>Academic Excellence Scholarship</li>
-                </ul>
-              </div>
-              <div class="pi-section fade-in">
-                <div class="pi-section-label">Media</div>
-                <ul class="pi-section-list">
-                  <li>(2021.6) Early Career Researcher Interview, "Unified Design Frameworks for Control and Estimation with Aerospace Applications," Mechanical Engineering and Robotics Research Information Center, Written Interview <em>(in Korean)</em></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel: Students -->
-          <div class="member-panel" id="panel-students">
-            <div id="students-container">
-              {% set studentGroups = [
-                { label: 'PhD Students',  members: members.snu.phd, avatarKey: 'phd', defaultRole: 'PhD Student'  },
-                { label: 'MSc Students',  members: members.snu.msc, avatarKey: 'msc', defaultRole: 'MSc Student'  },
-                { label: 'BSc Students',  members: members.snu.bsc, avatarKey: 'bsc', defaultRole: 'BSc Student'  }
-              ] %}
-              {% for group in studentGroups %}
-              {% if group.members | length > 0 %}
-              <div class="members-group fade-in">
-                <h3 class="members-group-title">{{ group.label }}</h3>
-                <div class="members-subgroup">
-                  <div class="members-grid">
-                    {% for mem in group.members %}
-                    {{ macros.memberCard(mem, group.avatarKey, group.defaultRole) }}
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
-              {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-
-          <!-- Panel: Alumni -->
-          <div class="member-panel" id="panel-alumni">
-            <div id="alumni-container">
-              {% set alumniMembers = members.cranfield.phd %}
-              {% if alumniMembers | length > 0 %}
-              <div class="members-group fade-in">
-                <h3 class="members-group-title">PhD Alumni <span class="members-group-note">(Co-supervised, Cranfield University)</span></h3>
-                <div class="members-subgroup">
-                  <div class="members-grid">
-                    {% for mem in alumniMembers %}
-                    {{ macros.memberCard(mem, 'phd', 'PhD Alumni') }}
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
-              {% else %}
-              <p style="color:var(--text-lt);font-size:.9rem;padding:16px 0;">No alumni records yet.</p>
-              {% endif %}
-            </div>
-          </div>
-
         </div>
       </section>
     </div>
@@ -672,10 +558,57 @@
 
           <div class="pub-list" id="pub-list">
             {% for group in publicationsGrouped %}
-            <div class="pub-year-group" data-type="{{ group.type }}">
+            <div class="pub-year-group">
               <div class="pub-year-label">{{ group.year }}</div>
               {% for pub in group.items %}
               {{ macros.pubItem(pub) }}
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- SEMINAR ────────────────────────────────────────────── -->
+    <div class="page" id="page-seminar">
+      <section class="section">
+        <div class="container container-narrow">
+          <div class="section-header fade-in">
+            <div class="section-num">05</div>
+            <div class="section-header-text">
+              <span class="section-kicker">Research</span>
+              <h2 class="section-title">AAI Seminar</h2>
+            </div>
+            <div class="section-header-line"></div>
+          </div>
+
+          <div class="seminar-playlist fade-in">
+            <iframe src="{{ seminars.playlistUrl }}" title="AAI Seminar Playlist" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+
+          <div class="seminar-list">
+            {% for group in seminars.years %}
+            <div class="seminar-year-group fade-in">
+              <h3 class="seminar-year-label">{{ group.year }}</h3>
+              {% for talk in group.talks %}
+              <div class="seminar-item">
+                <div class="seminar-item-meta">
+                  <span class="seminar-speaker">{{ talk.speaker }}</span>
+                  <span class="seminar-affil">{{ talk.affiliation }}</span>
+                  <span class="seminar-date">{{ talk.date }}</span>
+                </div>
+                <p class="seminar-title">
+                  {% if talk.url %}
+                  <a href="{{ talk.url }}" target="_blank" rel="noopener">{{ talk.title }} ↗</a>
+                  {% else %}
+                  {{ talk.title }}
+                  {% endif %}
+                </p>
+              </div>
               {% endfor %}
             </div>
             {% endfor %}
@@ -758,13 +691,13 @@
 
     <!-- CONTACT ────────────────────────────────────────────── -->
     <div class="page" id="page-contact">
-      <section class="section section-dark">
+      <section class="section">
         <div class="container">
           <div class="section-header fade-in">
             <div class="section-num">06</div>
             <div class="section-header-text">
               <span class="section-kicker">Contact</span>
-              <h2 class="section-title light">Find Us</h2>
+              <h2 class="section-title">Find Us</h2>
             </div>
             <div class="section-header-line"></div>
           </div>
@@ -834,13 +767,13 @@
 
     <!-- PROJECTS ─────────────────────────────────────────────── -->
     <div class="page" id="page-projects">
-      <section class="section section-dark">
+      <section class="section">
         <div class="container">
           <div class="section-header fade-in">
             <div class="section-num">07</div>
             <div class="section-header-text">
               <span class="section-kicker">Research</span>
-              <h2 class="section-title light">Projects</h2>
+              <h2 class="section-title">Projects</h2>
             </div>
             <div class="section-header-line"></div>
           </div>
@@ -869,13 +802,15 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <a href="#" class="footer-logo nav-tab" data-target="page-home">AAIL</a>
-          <span class="footer-tagline">Aerospace Autonomy &amp; Intelligence Laboratory</span>
+          <a href="#" class="footer-logo nav-tab" data-target="page-home">
+            <img src="images/aail-logo.png" alt="AAIL" />
+          </a>
+          <span class="nav-brand-divider"></span>
+          <img src="images/snu.png" alt="Seoul National University" class="footer-snu-logo" />
         </div>
         <div class="footer-links">
           <a href="#" class="nav-tab" data-target="page-about">About</a>
           <a href="#" class="nav-tab" data-target="page-research">Research</a>
-          <a href="#" class="nav-tab" data-target="page-members">Members</a>
           <a href="#" class="nav-tab" data-target="page-publications">Publications</a>
           <a href="#" class="nav-tab" data-target="page-board">Board</a>
           <a href="#" class="nav-tab" data-target="page-contact">Contact</a>
@@ -914,7 +849,6 @@
 
   <!-- Inject data globals needed by script.js interaction logic -->
   <script>
-  const RESEARCH_AREAS = {{ research | json | safe }};
   const NEWS           = {{ collections.news | newsJson | safe }};
   const GALLERY        = {{ collections.gallery | galleryJson | safe }};
   </script>

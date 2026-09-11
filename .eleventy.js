@@ -18,6 +18,9 @@ module.exports = function (eleventyConfig) {
     col.getFilteredByGlob("src/content/gallery/*.md")
        .sort((a, b) => b.data.date - a.data.date)
   );
+  eleventyConfig.addCollection("research", col =>
+    col.getFilteredByGlob("src/content/research/*.md")
+  );
 
   // ── Filters ───────────────────────────────────────────────────
   eleventyConfig.addFilter("take", (arr, n) => (arr || []).slice(0, n));

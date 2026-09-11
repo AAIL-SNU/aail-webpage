@@ -7,8 +7,8 @@
         "note": "ADD · Sep 2025– · Forward Reachability Analysis for Range Safety Operations" }
     ],
     "msc": [
-      { "initials": "JK", "name": "Junho Kim",     "nameKr": "김준호", "email": "junho9812@snu.ac.kr",    "note": "Sep 2026– (pre-MSc research Mar 2026–Aug 2026)" },
-      { "initials": "SO", "name": "Seungseok Oh",  "nameKr": "오승석", "email": "littlestein@snu.ac.kr",  "note": "Sep 2025– (pre-MSc research Nov 2025–Aug 2026)" },
+      { "initials": "JK", "name": "Junho Kim",     "nameKr": "김준호", "email": "junho9812@snu.ac.kr",    "note": "Sep 2026– (pre-MSc research Mar 2026–Aug 2026)", "link": "https://www.linkedin.com/in/junho-kim-882a91261/" },
+      { "initials": "SO", "name": "Seungseok Oh",  "nameKr": "오승석", "email": "seungseok.oh@snu.ac.kr",  "note": "Sep 2026– (pre-MSc research Nov 2025–Aug 2026)", "link": "https://seungseokoh.com" },
       { "initials": "AP", "name": "Alim Pyon", "nameKr": "편아림", "email": "alimpyon@snu.ac.kr", "note": "Mar 2026–", "photo": "images/members/alimpyon.jpg" }
     ],
     "bsc": [
@@ -20,10 +20,10 @@
   },
   "cranfield": {
     "phd": [
-      { "initials": "MS", "name": "Muhammad Haad Shaikh", "note": "Advanced Energy Management for Zero-Emission Aircraft" },
-      { "initials": "AI", "name": "Abubakar Ibrahim",     "note": "Region-of-Attraction Analysis via Sum-of-Squares" },
+      { "initials": "MS", "name": "Muhammad Haad Shaikh", "note": "Advanced Energy Management for Zero-Emission Aircraft", "link": "https://www.linkedin.com/in/haad-shaikh/" },
+      { "initials": "AI", "name": "Abubakar Ibrahim",     "note": "Region-of-Attraction Analysis via Sum-of-Squares", "link": "https://www.linkedin.com/in/abubakar-ibrahim-95652a44" },
       { "initials": "RC", "name": "Rodrigo Carvalho de Paulo", "note": "Learning-Based Autonomous Aerial Refueling" },
-      { "initials": "SO", "name": "Saki Omi",             "note": "Dynamic Deep-RL in Partially Observed MDPs" },
+      { "initials": "SO", "name": "Saki Omi",             "note": "Dynamic Deep-RL in Partially Observed MDPs", "link": "https://www.linkedin.com/in/saki-omi-14b831120/" },
       { "initials": "YL", "name": "Yunha Lee",            "note": "Domain-Knowledge-Aided Learning for Autopilot Design" }
     ]
   }

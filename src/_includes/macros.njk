@@ -8,7 +8,7 @@
     <div class="member-avatar avatar-{{ avatarKey }}"{% if mem.photo %} style="display:none"{% endif %}>{{ mem.initials }}</div>
   </div>
   <div class="member-info">
-    <p class="member-name">{{ mem.name }}{% if mem.nameKr %}<span class="member-name-kr">{{ mem.nameKr }}</span>{% endif %}</p>
+    <p class="member-name">{{ mem.name }}{% if mem.nameKr %}<span class="member-name-kr">{{ mem.nameKr }}</span>{% endif %}{% if mem.link %}<a class="member-link-icon" href="{{ mem.link }}" target="_blank" rel="noopener" aria-label="{{ mem.name }} website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>{% endif %}</p>
     <p class="member-role">{{ mem.role if mem.role else defaultRole }}{% if mem.badge %}<span class="member-badge">{{ mem.badge }}</span>{% endif %}</p>
     {% if mem.note %}<p class="member-note">{{ mem.note }}</p>{% endif %}
     {% if mem.email %}<a class="member-email" href="mailto:{{ mem.email }}">{{ mem.email }}</a>{% endif %}

@@ -188,7 +188,7 @@ function entryToPub(entry) {
 
   return {
     type,
-    year:    type === "preprint" ? "Preprints" : cleanLatex(entry.year || ""),
+    year:    cleanLatex(entry.year || ""),
     title:   cleanLatex(entry.title  || ""),
     authors: formatAuthors(entry.author || ""),
     venue:   buildVenue(entry),
@@ -201,17 +201,15 @@ function entryToPub(entry) {
 const bibPath = path.join(__dirname, "../data/publications.bib");
 const text    = fs.readFileSync(bibPath, "utf-8");
 
-const TYPE_ORDER = { preprint: 0, journal: 1, conference: 2 };
+const TYPE_ORDER = { journal: 0, conference: 1, preprint: 2 };
 
 const pubs = parseBibtex(text)
   .map(e => { try { return entryToPub(e); } catch { return null; } })
   .filter(Boolean)
   .sort((a, b) => {
-    const dt = (TYPE_ORDER[a.type] ?? 99) - (TYPE_ORDER[b.type] ?? 99);
-    if (dt !== 0) return dt;
-    const ay = a.year === "Preprints" ? 9999 : (parseInt(a.year) || 0);
-    const by = b.year === "Preprints" ? 9999 : (parseInt(b.year) || 0);
-    return by - ay;
+    const dy = (parseInt(b.year) || 0) - (parseInt(a.year) || 0);
+    if (dy !== 0) return dy;
+    return (TYPE_ORDER[a.type] ?? 99) - (TYPE_ORDER[b.type] ?? 99);
   });
 
 module.exports = pubs;

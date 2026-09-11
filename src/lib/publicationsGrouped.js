@@ -1,6 +1,6 @@
 const publications = require("./publications");
 
-const TYPE_ORDER = { preprint: 0, journal: 1, conference: 2 };
+const TYPE_ORDER = { journal: 0, conference: 1, preprint: 2 };
 
 function getPubUrl(pub) {
   if (pub.url) return pub.url;
@@ -9,16 +9,17 @@ function getPubUrl(pub) {
   return "https://scholar.google.com/scholar?q=" + encodeURIComponent(pub.title);
 }
 
+// Group by real calendar year only, so preprints sort chronologically
+// alongside journal/conference papers instead of being bucketed apart.
 const groupMap = {};
 publications.forEach(pub => {
-  const key = pub.type + "__" + pub.year;
-  if (!groupMap[key]) groupMap[key] = { type: pub.type, year: pub.year, items: [] };
+  const key = pub.year;
+  if (!groupMap[key]) groupMap[key] = { year: pub.year, items: [] };
   groupMap[key].items.push({ ...pub, computedUrl: getPubUrl(pub) });
 });
 
-module.exports = Object.values(groupMap).sort((a, b) => {
-  if (a.type !== b.type) return TYPE_ORDER[a.type] - TYPE_ORDER[b.type];
-  if (a.year === "Preprints") return -1;
-  if (b.year === "Preprints") return  1;
-  return parseInt(b.year) - parseInt(a.year);
+Object.values(groupMap).forEach(group => {
+  group.items.sort((a, b) => TYPE_ORDER[a.type] - TYPE_ORDER[b.type]);
 });
+
+module.exports = Object.values(groupMap).sort((a, b) => parseInt(b.year) - parseInt(a.year));
