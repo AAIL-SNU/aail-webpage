@@ -1,29 +1,29 @@
 {
   "snu": {
     "phd": [
-      { "initials": "SK", "name": "Seunghoon Kang",   "nameKr": "강승훈", "email": "",                  "role": "PhD Student (Part-time)", "note": "ADD · Sep 2025– · Forward Reachability Analysis for Range Safety Operations" },
-      { "initials": "SJ", "name": "Seongmin Jeong",  "nameKr": "정성민", "email": "jsm330@snu.ac.kr",  "note": "ROKA · Mar 2026–", "badge": "Lab Leader" },
-      { "initials": "JK", "name": "Jaewon Kim",       "nameKr": "김재원", "email": "vgkjw@snu.ac.kr",   "note": "Mar 2026–" }
+      { "name": "Seunghoon Kang",   "nameKr": "강승훈", "email": "",                  "role": "PhD Student (Part-time)", "researchInterest": "TBD", "note": "ADD · Sep 2025– · Forward Reachability Analysis for Range Safety Operations" },
+      { "name": "Seongmin Jeong",  "nameKr": "정성민", "email": "jsm330@snu.ac.kr",  "researchInterest": "TBD", "note": "ROKA · Mar 2026–", "badge": "Lab Leader" },
+      { "name": "Jaewon Kim",       "nameKr": "김재원", "email": "vgkjw@snu.ac.kr",   "researchInterest": "TBD", "note": "Mar 2026–" }
     ],
     "msc": [
-      { "initials": "AP", "name": "Alim Pyon", "nameKr": "편아림", "email": "alimpyon@snu.ac.kr", "note": "Mar 2026–", "photo": "images/members/alimpyon.jpg" },
-      { "initials": "JK", "name": "Junho Kim",     "nameKr": "김준호", "email": "junho9812@snu.ac.kr",    "note": "Sep 2026– (pre-MSc research Mar 2026–Aug 2026)", "link": "https://www.linkedin.com/in/junho-kim-882a91261/" },
-      { "initials": "SO", "name": "Seungseok Oh",  "nameKr": "오승석", "email": "seungseok.oh@snu.ac.kr",  "note": "Sep 2026– (pre-MSc research Nov 2025–Aug 2026)", "link": "https://seungseokoh.com", "photo": "images/members/seungseokoh.jpg" }
+      { "name": "Alim Pyon", "nameKr": "편아림", "email": "alimpyon@snu.ac.kr", "researchInterest": "TBD", "note": "Mar 2026–", "photo": "images/members/alimpyon.jpg" },
+      { "name": "Junho Kim",     "nameKr": "김준호", "email": "junho9812@snu.ac.kr",    "researchInterest": "TBD", "note": "Sep 2026– (pre-MSc research Mar 2026–Aug 2026)", "link": "https://www.linkedin.com/in/junho-kim-882a91261/" },
+      { "name": "Seungseok Oh",  "nameKr": "오승석", "email": "seungseok.oh@snu.ac.kr",  "researchInterest": "TBD", "note": "Sep 2026– (pre-MSc research Nov 2025–Aug 2026)", "link": "https://seungseokoh.com", "photo": "images/members/seungseokoh.jpg" }
     ],
     "bsc": [
-      { "initials": "YL", "name": "Yeongjun Lee",  "nameKr": "이영준", "email": "krkr1203@snu.ac.kr", "note": "May 2026–" },
-      { "initials": "JK", "name": "Jungwon Kim",   "nameKr": "김중원", "email": "kimjw624@snu.ac.kr",     "note": "Mar 2026–" },
-      { "initials": "JL", "name": "Jaeyoung Lee",  "nameKr": "이재영", "email": "dlwodud0206@snu.ac.kr",  "note": "Nov 2025–" },
-      { "initials": "HA", "name": "Hyeonseo An",   "nameKr": "안현서", "email": "anhyeonseo@snu.ac.kr",   "note": "Nov 2025–" }
+      { "name": "Jaeyoung Lee",  "nameKr": "이재영", "email": "dlwodud0206@snu.ac.kr",  "researchInterest": "TBD", "note": "Nov 2025–" },
+      { "name": "Hyeonseo An",   "nameKr": "안현서", "email": "anhyeonseo@snu.ac.kr",   "researchInterest": "TBD", "note": "Nov 2025–" },
+      { "name": "Jungwon Kim",   "nameKr": "김중원", "email": "kimjw624@snu.ac.kr",     "researchInterest": "TBD", "note": "Mar 2026–" },
+      { "name": "Yeongjun Lee",  "nameKr": "이영준", "email": "krkr1203@snu.ac.kr", "researchInterest": "TBD", "note": "May 2026–" }
     ]
   },
   "cranfield": {
     "phd": [
-      { "initials": "MS", "name": "Muhammad Haad Shaikh", "note": "Advanced Energy Management for Zero-Emission Aircraft", "link": "https://www.linkedin.com/in/haad-shaikh/" },
-      { "initials": "AI", "name": "Abubakar Ibrahim",     "note": "Region-of-Attraction Analysis via Sum-of-Squares", "link": "https://www.linkedin.com/in/abubakar-ibrahim-95652a44" },
-      { "initials": "RC", "name": "Rodrigo Carvalho de Paulo", "note": "Learning-Based Autonomous Aerial Refueling" },
-      { "initials": "SO", "name": "Saki Omi",             "note": "Dynamic Deep-RL in Partially Observed MDPs", "link": "https://www.linkedin.com/in/saki-omi-14b831120/" },
-      { "initials": "YL", "name": "Yunha Lee",            "note": "Domain-Knowledge-Aided Learning for Autopilot Design" }
+      { "name": "Muhammad Haad Shaikh", "researchInterest": "Advanced Energy Management for Zero-Emission Aircraft", "link": "https://www.linkedin.com/in/haad-shaikh/" },
+      { "name": "Abubakar Ibrahim",     "researchInterest": "Region-of-Attraction Analysis via Sum-of-Squares", "link": "https://www.linkedin.com/in/abubakar-ibrahim-95652a44" },
+      { "name": "Rodrigo Carvalho de Paulo", "researchInterest": "Learning-Based Autonomous Aerial Refueling" },
+      { "name": "Saki Omi",             "researchInterest": "Dynamic Deep-RL in Partially Observed MDPs", "link": "https://www.linkedin.com/in/saki-omi-14b831120/" },
+      { "name": "Yunha Lee",            "researchInterest": "Domain-Knowledge-Aided Learning for Autopilot Design" }
     ]
   }
 }

@@ -161,21 +161,18 @@
             <a href="#" class="btn btn-outline nav-tab" data-target="page-board">View All News →</a>
           </div>
           <div id="news-teaser">
-            <div class="news-grid">
+            {% set newsCount = collections.news | length %}
+            <div class="board-list">
+              <div class="board-list-header">
+                <span class="board-col-num">No.</span>
+                <span class="board-col-title">Title</span>
+                <span class="board-col-date">Date</span>
+              </div>
               {% for item in collections.news | take(3) %}
-              <div class="news-card fade-in">
-                <div class="news-card-img">
-                  {% if item.data.image %}
-                    <img src="{{ item.data.image }}" alt="{{ item.data.title }}" loading="lazy" />
-                  {% else %}
-                    <div class="news-card-placeholder"><span>{{ item.data.month }}</span><span>{{ item.data.year }}</span></div>
-                  {% endif %}
-                </div>
-                <div class="news-card-body">
-                  <p class="news-card-date">{{ item.data.month }} {{ item.data.year }}</p>
-                  <p class="news-card-title">{{ item.data.title }}</p>
-                  <p class="news-card-text">{{ item.templateContent | striptags | safe }}</p>
-                </div>
+              <div class="board-row fade-in" onclick="openNewsModal({{ loop.index0 }})">
+                <span class="board-col-num">{{ newsCount - loop.index0 }}</span>
+                <span class="board-col-title">{{ item.data.title }}</span>
+                <span class="board-col-date">{{ item.data.year }}-{{ item.data.month | monthNum }}</span>
               </div>
               {% endfor %}
             </div>
@@ -634,8 +631,8 @@
               <div class="board-list">
                 <div class="board-list-header">
                   <span class="board-col-num">No.</span>
-                  <span class="board-col-title">제목</span>
-                  <span class="board-col-date">날짜</span>
+                  <span class="board-col-title">Title</span>
+                  <span class="board-col-date">Date</span>
                 </div>
                 {% for item in collections.news %}
                 <div class="board-row fade-in" onclick="openNewsModal({{ loop.index0 }})">

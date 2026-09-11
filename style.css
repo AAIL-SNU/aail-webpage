@@ -1359,17 +1359,22 @@ a.pub-title:hover { color: var(--blue); text-decoration: underline; }
   width: 174px;
   height: 174px;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--navy), var(--blue));
+  background: var(--bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--text-lt);
   letter-spacing: .04em;
   box-shadow: 0 0 0 3px var(--bg);
+  border: 1px solid var(--border);
 }
-.avatar-phd, .avatar-msc, .avatar-bsc { background: var(--navy); }
+.avatar-phd, .avatar-msc, .avatar-bsc { background: var(--bg-alt); }
+.member-avatar-icon {
+  width: 40%;
+  height: 40%;
+}
 
 .member-info {
   text-align: left;
@@ -1424,6 +1429,16 @@ a.pub-title:hover { color: var(--blue); text-decoration: underline; }
   word-break: break-all;
 }
 .member-email:hover { text-decoration: underline; }
+.member-research {
+  font-size: .82rem;
+  color: var(--text-lt);
+  line-height: 1.4;
+  margin-top: 6px;
+}
+.member-research-label {
+  font-weight: 600;
+  color: var(--text-mid);
+}
 .member-link-icon {
   display: inline-flex;
   align-items: center;

@@ -43,7 +43,25 @@ function switchPage(targetId, pushHistory) {
   }
 }
 
+function currentPageId() {
+  const active = document.querySelector('.page.active');
+  return active ? active.id : 'page-home';
+}
+
+function pageHash(id) {
+  const h = id.replace('page-', '');
+  return h === 'home' ? '#' : '#' + h;
+}
+
 window.addEventListener('popstate', e => {
+  const modal = document.getElementById('gallery-modal');
+  if (modal && modal.classList.contains('open')) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    const page = currentPageId();
+    history.pushState({ page }, '', pageHash(page));
+    return;
+  }
   const page = e.state?.page || 'page-home';
   switchPage(page, false);
 });
