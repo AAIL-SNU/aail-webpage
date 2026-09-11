@@ -55,6 +55,21 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("padNum", n => String(n).padStart(2, "0"));
 
+  // "2026-08-24" -> "24th August 2026"
+  function formatDisplayDate(date) {
+    if (!date) return "";
+    const d = new Date(date);
+    const day = d.getUTCDate();
+    const month = d.toLocaleString("en-US", { month: "long", timeZone: "UTC" });
+    const year = d.getUTCFullYear();
+    const suffix =
+      day % 10 === 1 && day !== 11 ? "st" :
+      day % 10 === 2 && day !== 12 ? "nd" :
+      day % 10 === 3 && day !== 13 ? "rd" : "th";
+    return `${day}${suffix} ${month} ${year}`;
+  }
+  eleventyConfig.addFilter("displayDate", formatDisplayDate);
+
   // Serialise to JSON for inline <script> injection
   eleventyConfig.addFilter("json", obj => JSON.stringify(obj));
 
@@ -73,7 +88,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("galleryJson", collection =>
     JSON.stringify((collection || []).map(item => ({
       title: item.data.title,
-      date:  item.data.displayDate,
+      date:  formatDisplayDate(item.data.date),
       cover: item.data.cover || "",
       body:  decodeEntities((item.templateContent || "").replace(/<[^>]+>/g, "").trim()),
     })))

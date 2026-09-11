@@ -653,7 +653,7 @@
               {% else %}
               <div class="news-grid">
                 {% for item in collections.gallery %}
-                {% set dp = item.data.displayDate | splitFirst %}
+                {% set dp = item.data.date | displayDate | splitFirst %}
                 <div class="news-card gallery-card fade-in" role="button" tabindex="0"
                      onclick="openGalleryModal({{ loop.index0 }})"
                      onkeydown="if(event.key==='Enter')openGalleryModal({{ loop.index0 }})">
@@ -665,7 +665,7 @@
                     {% endif %}
                   </div>
                   <div class="news-card-body">
-                    <p class="news-card-date">{{ item.data.displayDate }}</p>
+                    <p class="news-card-date">{{ item.data.date | displayDate }}</p>
                     <p class="news-card-title">{{ item.data.title }}</p>
                   </div>
                 </div>
