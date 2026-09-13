@@ -1,0 +1,33 @@
+---
+layout: base.njk
+title: "Members — AAIL"
+navGroup: about
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('About', 'Members') }}
+
+    <div id="students-container">
+      {% set studentGroups = [
+        { label: 'PhD Students',  members: members.snu.phd, avatarKey: 'phd', defaultRole: 'PhD Student'  },
+        { label: 'MSc Students',  members: members.snu.msc, avatarKey: 'msc', defaultRole: 'MSc Student'  },
+        { label: 'BSc Students',  members: members.snu.bsc, avatarKey: 'bsc', defaultRole: 'BSc Student'  }
+      ] %}
+      {% for group in studentGroups %}
+      {% if group.members | length > 0 %}
+      <div class="members-group fade-in">
+        <h3 class="members-group-title">{{ group.label }}</h3>
+        <div class="members-subgroup">
+          <div class="members-grid members-grid-cols3">
+            {% for mem in group.members %}
+            {{ macros.memberCard(mem, group.avatarKey, group.defaultRole) }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

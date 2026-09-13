@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: "Legacy of FDCL — AAIL"
+navGroup: about
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('About', 'Legacy of FDCL') }}
+
+    <div class="legacy-section fade-in">
+      <p class="legacy-desc">The Aerospace Autonomy and Intelligence Laboratory (AAIL) represents the third generation at Seoul National University, continuing the Flight Dynamics and Control Laboratory's (FDCL) academic tradition spanning seven decades. The laboratory combines the precision of traditional control engineering with the transformative power of modern computing.</p>
+      <p class="legacy-desc legacy-desc-kr">항공우주 자율지능 연구실(AAIL)은 서울대학교에서 이어져 온 탁월한 학문적 계보의 3세대 연구실입니다. AAIL은 지난 70년간 대한민국 항공우주 제어 연구의 흐름을 이끌어 온 지적 산실인 비행역학 및 제어 연구실(FDCL)의 학문적 전통을 자랑스럽게 계승하고 있습니다. 선대 연구진이 확립한 수월성의 기준을 바탕으로, AAIL은 전통적인 제어공학의 엄밀함과 현대 컴퓨팅의 혁신적 역량을 융합해 나가고 있습니다.</p>
+      <img src="{{ '/images/legacy.jpg' | url }}" alt="Legacy of FDCL" class="about-vision-img legacy-img" loading="lazy" />
+      <div class="legacy-grid">
+        <div class="legacy-card">
+          <span class="legacy-gen">1st Generation</span>
+          <h4 class="legacy-name">Prof. Sang-Kyu Wie</h4>
+          <p class="legacy-period">Dec 1955 – Feb 1991</p>
+          <ul class="legacy-edu">
+            <li>PhD, Seoul National University (1967)</li>
+            <li>MSc, University of Minnesota (1959)</li>
+            <li>BSc, Seoul National University (1950)</li>
+          </ul>
+        </div>
+        <div class="legacy-card">
+          <span class="legacy-gen">2nd Generation</span>
+          <h4 class="legacy-name">Prof. Youdan Kim</h4>
+          <p class="legacy-period">Feb 1992 – Aug 2025</p>
+          <ul class="legacy-edu">
+            <li>PhD, Texas A&amp;M University (1991)</li>
+            <li>MSc, Seoul National University (1985)</li>
+            <li>BSc, Seoul National University (1983)</li>
+          </ul>
+        </div>
+        <div class="legacy-card legacy-card-current">
+          <span class="legacy-gen">3rd Generation</span>
+          <h4 class="legacy-name">Prof. Namhoon Cho</h4>
+          <p class="legacy-period">Sep 2025 – Present</p>
+          <ul class="legacy-edu">
+            <li>PhD, Seoul National University (2017)</li>
+            <li>BSc, Seoul National University (2012)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

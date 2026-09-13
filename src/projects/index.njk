@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: "Projects — AAIL"
+navGroup: research
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('Research', 'Projects') }}
+
+    <div class="proj-tabs-wrap fade-in">
+      <button class="proj-tab active" data-filter="ongoing">Ongoing Projects</button>
+      <button class="proj-tab" data-filter="completed">Completed Projects</button>
+    </div>
+
+    <div id="projects-container">
+      <div id="projects-ongoing" class="proj-group">
+        {{ macros.projCards(projects.ongoing, 'ongoing') }}
+      </div>
+      <div id="projects-completed" class="proj-group hidden">
+        {{ macros.projCards(projects.completed, 'completed') }}
+      </div>
+    </div>
+  </div>
+</section>

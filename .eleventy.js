@@ -1,10 +1,11 @@
+const PATH_PREFIX = "/aail-webpage/";
+
 module.exports = function (eleventyConfig) {
   // ── Passthrough: assets live at repo root ──────────────────────
   eleventyConfig.addPassthroughCopy({ "style.css":   "style.css"   });
   eleventyConfig.addPassthroughCopy({ "images":       "images"      });
   eleventyConfig.addPassthroughCopy({ "robots.txt":   "robots.txt"  });
   eleventyConfig.addPassthroughCopy({ "sitemap.xml":  "sitemap.xml" });
-  eleventyConfig.addPassthroughCopy({ "404.html":     "404.html"    });
 
   // ── Passthrough: interaction-only script ─────────────────────
   eleventyConfig.addPassthroughCopy({ "src/script.js": "script.js" });
@@ -89,7 +90,7 @@ module.exports = function (eleventyConfig) {
     JSON.stringify((collection || []).map(item => ({
       title: item.data.title,
       date:  formatDisplayDate(item.data.date),
-      cover: item.data.cover || "",
+      cover: item.data.cover ? PATH_PREFIX + item.data.cover : "",
       body:  decodeEntities((item.templateContent || "").replace(/<[^>]+>/g, "").trim()),
     })))
   );
@@ -99,6 +100,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("publicationsGrouped", () => require("./src/lib/publicationsGrouped"));
 
   return {
+    pathPrefix: PATH_PREFIX,
     dir: {
       input:    "src",
       output:   "_site",

@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: "Gallery — AAIL"
+navGroup: board
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('Board', 'Gallery') }}
+
+    <div class="pub-tabs fade-in">
+      <a href="{{ '/news/' | url }}" class="pub-tab">News</a>
+      <a href="{{ '/gallery/' | url }}" class="pub-tab active">Gallery</a>
+    </div>
+
+    <div id="gallery-container">
+      {% if collections.gallery | length == 0 %}
+      <p style="color:var(--text-lt);font-size:.9rem;padding:24px 0;">No gallery posts yet.</p>
+      {% else %}
+      <div class="news-grid">
+        {% for item in collections.gallery %}
+        {% set dp = item.data.date | displayDate | splitFirst %}
+        <div class="news-card gallery-card fade-in" role="button" tabindex="0"
+             onclick="openGalleryModal({{ loop.index0 }})"
+             onkeydown="if(event.key==='Enter')openGalleryModal({{ loop.index0 }})">
+          <div class="news-card-img">
+            {% if item.data.cover %}
+              <img src="{{ ('/' ~ item.data.cover) | url }}" alt="{{ item.data.title }}" loading="lazy" />
+            {% else %}
+              <div class="news-card-placeholder"><span>{{ dp[0] }}</span><span>{{ dp[1] }}</span></div>
+            {% endif %}
+          </div>
+          <div class="news-card-body">
+            <p class="news-card-date">{{ item.data.date | displayDate }}</p>
+            <p class="news-card-title">{{ item.data.title }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -5,3 +5,4 @@ _site/
 .cache/
 .omc
 *.swp
+.DS_Store

@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: "Seminar — AAIL"
+navGroup: research
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container container-narrow">
+    {{ macros.pageHeader('Research', 'Seminar') }}
+
+    <div class="seminar-playlist fade-in">
+      <iframe src="{{ seminars.playlistUrl }}" title="AAI Seminar Playlist" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <div class="seminar-list">
+      {% for group in seminars.years %}
+      <div class="seminar-year-group fade-in">
+        <h3 class="seminar-year-label">{{ group.year }}</h3>
+        {% for talk in group.talks %}
+        <div class="seminar-item">
+          <div class="seminar-item-meta">
+            <span class="seminar-speaker">{{ talk.speaker }}</span>
+            <span class="seminar-affil">{{ talk.affiliation }}</span>
+            <span class="seminar-date">{{ talk.date }}</span>
+          </div>
+          <p class="seminar-title">
+            {% if talk.url %}
+            <a href="{{ talk.url }}" target="_blank" rel="noopener">{{ talk.title }} ↗</a>
+            {% else %}
+            {{ talk.title }}
+            {% endif %}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

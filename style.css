@@ -44,12 +44,9 @@ body {
   min-height: 100vh;
 }
 
-/* ── PAGE SWITCHING ─────────────────────────────────────────── */
-#main-pages { flex: 1; }
-
-.page { display: none; }
-.page.active {
-  display: block;
+/* ── PAGE CONTENT ───────────────────────────────────────────── */
+#main-content {
+  flex: 1;
   animation: pageFadeIn 0.35s ease forwards;
 }
 
@@ -115,7 +112,6 @@ img { max-width: 100%; display: block; }
   gap: 24px;
   margin-bottom: 48px;
 }
-.section-num { display: none; }
 .section-header-text { display: flex; flex-direction: column; }
 .section-kicker {
   font-size: 11px;
@@ -291,6 +287,7 @@ img { max-width: 100%; display: block; }
   transition: color var(--transition), background var(--transition);
 }
 .nav-dropdown li a:hover { color: var(--blue); background: var(--bg-alt); }
+.nav-dropdown li a.nav-active { color: var(--blue); }
 .nav-dropdown-email {
   display: block;
   padding: 9px 20px;
@@ -364,6 +361,7 @@ img { max-width: 100%; display: block; }
   background: var(--bg-alt);
   color: var(--text);
 }
+.mega-link.nav-active { color: var(--blue); font-weight: 600; }
 
 .hamburger {
   display: none;
@@ -787,39 +785,7 @@ img { max-width: 100%; display: block; }
   font-style: italic;
 }
 
-/* ── ABOUT TABS ───────────────────────────────────────────────── */
-.about-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.about-tab {
-  padding: 8px 22px;
-  border-radius: 999px;
-  border: 2px solid var(--border);
-  background: var(--white);
-  font-size: .875rem;
-  font-weight: 600;
-  color: var(--text-mid);
-  cursor: pointer;
-  transition: var(--transition);
-  font-family: var(--font-sans);
-}
-
-.about-tab:hover { border-color: var(--blue); color: var(--blue); }
-.about-tab.active {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: var(--white);
-}
-
-.about-panel { display: none; }
-.about-panel.active { display: block; }
-
-/* ── COURSES (About → Courses tab) ────────────────────────────── */
+/* ── COURSES ───────────────────────────────────────────────────── */
 .course-uni {
   margin-bottom: 52px;
 }
@@ -1268,10 +1234,6 @@ a.pub-title {
 a.pub-title:hover { color: var(--blue); text-decoration: underline; }
 
 .pub-more { text-align: center; margin-top: 48px; }
-
-/* ── BOARD PANELS ────────────────────────────────────────────── */
-.board-panel { display: none; }
-.board-panel.active { display: block; }
 
 .gallery-card { cursor: pointer; }
 

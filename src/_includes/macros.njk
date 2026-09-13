@@ -1,8 +1,18 @@
+{% macro pageHeader(kicker, title) %}
+<div class="section-header fade-in">
+  <div class="section-header-text">
+    <span class="section-kicker">{{ kicker }}</span>
+    <h2 class="section-title">{{ title }}</h2>
+  </div>
+  <div class="section-header-line"></div>
+</div>
+{% endmacro %}
+
 {% macro memberCard(mem, avatarKey, defaultRole) %}
 <div class="member-card{% if mem.highlight %} member-card-highlight{% endif %}">
   <div class="member-photo-wrap">
     {% if mem.photo %}
-    <img src="{{ mem.photo }}" alt="{{ mem.name }}" class="member-photo"
+    <img src="{{ ('/' ~ mem.photo) | url }}" alt="{{ mem.name }}" class="member-photo"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
     {% endif %}
     <div class="member-avatar avatar-{{ avatarKey }}"{% if mem.photo %} style="display:none"{% endif %}>
