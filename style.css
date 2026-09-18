@@ -1314,7 +1314,7 @@ a.pub-title:hover { color: var(--blue); text-decoration: underline; }
   width: 174px;
   height: 174px;
   border-radius: var(--radius);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .member-avatar {
