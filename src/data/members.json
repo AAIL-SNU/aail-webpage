@@ -6,15 +6,15 @@
       { "name": "Jaewon Kim",       "nameKr": "김재원", "email": "vgkjw@snu.ac.kr",   "researchInterest": "TBD", "note": "Mar 2026–" }
     ],
     "msc": [
-      { "name": "Alim Pyon", "nameKr": "편아림", "email": "alimpyon@snu.ac.kr", "researchInterest": "TBD", "note": "Mar 2026–", "photo": "images/members/alimpyon.jpg" },
-      { "name": "Junho Kim",     "nameKr": "김준호", "email": "junho9812@snu.ac.kr",    "researchInterest": "TBD", "note": "Sep 2026– (pre-MSc research Mar 2026–Aug 2026)", "link": "https://www.linkedin.com/in/junho-kim-882a91261/" },
-      { "name": "Seungseok Oh",  "nameKr": "오승석", "email": "seungseok.oh@snu.ac.kr",  "researchInterest": "TBD", "note": "Sep 2026– (pre-MSc research Nov 2025–Aug 2026)", "link": "https://seungseokoh.com", "photo": "images/members/seungseokoh.jpg" }
+      { "name": "Alim Pyon", "nameKr": "편아림", "email": "alimpyon@snu.ac.kr", "researchInterest": "Trajectory Optimization, Missile Guidance", "note": "Mar 2026–", "photo": "images/members/alimpyon.jpg", "link" : "https://www.linkedin.com/in/alim-pyon-51b92037b/"},
+      { "name": "Junho Kim",     "nameKr": "김준호", "email": "junho9812@snu.ac.kr", "researchInterest": "Data-driven Control, HJ Reachability", "note": "Sep 2026– (pre-MSc research Mar 2026–Aug 2026)", "link": "https://www.linkedin.com/in/junho-kim-882a91261/" },
+      { "name": "Seungseok Oh",  "nameKr": "오승석", "email": "seungseok.oh@snu.ac.kr",  "researchInterest": "Safe Flight Control, Constrained Neural Networks", "note": "Sep 2026– (pre-MSc research Nov 2025–Aug 2026)", "link": "https://seungseokoh.com", "photo": "images/members/seungseokoh.jpg" }
     ],
     "bsc": [
       { "name": "Jaeyoung Lee",  "nameKr": "이재영", "email": "dlwodud0206@snu.ac.kr",  "researchInterest": "TBD", "note": "Nov 2025–" },
-      { "name": "Hyeonseo An",   "nameKr": "안현서", "email": "anhyeonseo@snu.ac.kr",   "researchInterest": "TBD", "note": "Nov 2025–" },
-      { "name": "Jungwon Kim",   "nameKr": "김중원", "email": "kimjw624@snu.ac.kr",     "researchInterest": "TBD", "note": "Mar 2026–" },
-      { "name": "Yeongjun Lee",  "nameKr": "이영준", "email": "krkr1203@snu.ac.kr", "researchInterest": "TBD", "note": "May 2026–" }
+      { "name": "Hyeonseo An",   "nameKr": "안현서", "email": "anhyeonseo@snu.ac.kr",   "researchInterest": "Meta-learning Based Control, Partial Info TAD games", "note": "Nov 2025–" },
+      { "name": "Jungwon Kim",   "nameKr": "김중원", "email": "kimjw624@snu.ac.kr",     "researchInterest": "Reinforcement Learning, Adaptive Control", "note": "Mar 2026–", "photo": "images/members/jungwonkim.jpg" },
+      { "name": "Yeongjun Lee",  "nameKr": "이영준", "email": "krkr1203@snu.ac.kr", "researchInterest": "Active exploration, Dual control", "note": "May 2026–", "photo": "images/members/yeongjunlee.jpg" }
     ]
   },
   "cranfield": {

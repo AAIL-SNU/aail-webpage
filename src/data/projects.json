@@ -1,6 +1,16 @@
 {
   "ongoing": [
     {
+      "title":  "Physical AI",
+      "period": "2026.8~2031.7",
+      "agency": "NIPA"
+    },
+    {
+      "title":  "Engineering Research Center for Trustworthy Distributed Physical Systems",
+      "period": "2026.7~2033.6",
+      "agency": "National Research Foundation of Korea (NRF)"
+    },
+    {
       "title":  "D3C: Direct Data-Driven Control for Safe and Efficient Autonomous Systems",
       "period": "2026.1 – 2027.1",
       "agency": "Seoul National University (SNU)"
