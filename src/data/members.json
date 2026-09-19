@@ -3,7 +3,7 @@
     "phd": [
       { "name": "Seunghoon Kang",   "nameKr": "강승훈", "email": "",                  "role": "PhD Student (Part-time)", "researchInterest": "TBD", "note": "ADD · Sep 2025– · Forward Reachability Analysis for Range Safety Operations" },
       { "name": "Seongmin Jeong",  "nameKr": "정성민", "email": "jsm330@snu.ac.kr",  "researchInterest": "Safety Critical Control, Control Barrier Functions", "note": "ROKA · Mar 2026–","photo": "images/members/seongminjeong.jpg", "badge": "Lab Leader" },
-      { "name": "Jaewon Kim",       "nameKr": "김재원", "email": "vgkjw@snu.ac.kr",   "researchInterest": "TBD", "note": "Mar 2026–" }
+      { "name": "Jaewon Kim",       "nameKr": "김재원", "email": "vgkjw@snu.ac.kr",   "researchInterest": "TBD", "note": "Mar 2026–" , "photo": "images/members/jaewonkim.jpg"}
     ],
     "msc": [
       { "name": "Alim Pyon", "nameKr": "편아림", "email": "alimpyon@snu.ac.kr", "researchInterest": "Trajectory Optimization, Missile Guidance", "note": "Mar 2026–", "photo": "images/members/alimpyon.jpg", "link" : "https://www.linkedin.com/in/alim-pyon-51b92037b/"},
