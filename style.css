@@ -724,6 +724,19 @@ img { max-width: 100%; display: block; }
   color: var(--blue);
   font-weight: 700;
 }
+.pi-section-list a,
+.pi-section-bio a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--blue) 40%, transparent);
+  text-underline-offset: 2px;
+  transition: color var(--transition), text-decoration-color var(--transition);
+}
+.pi-section-list a:hover,
+.pi-section-bio a:hover {
+  color: var(--blue-dark, var(--blue));
+  text-decoration-color: var(--blue);
+}
 
 .pi-profile-card {
   display: flex;

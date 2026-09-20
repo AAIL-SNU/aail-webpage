@@ -49,6 +49,16 @@
 </div>
 {% endmacro %}
 
+{% macro courseCard(c) %}
+<div class="course-card">
+  {% if c.level %}<span class="course-level">{{ c.level }}</span>{% endif %}
+  <h4 class="course-name">{{ c.name }}</h4>
+  {% if c.code %}<p class="course-code">{{ c.code }}</p>{% endif %}
+  <p class="course-period">{{ c.period }}</p>
+  {% if c.role %}<span class="course-role">{{ c.role }}</span>{% endif %}
+</div>
+{% endmacro %}
+
 {% macro projCards(list, filter) %}
 {% if list | length == 0 %}
 <p class="proj-empty fade-in">No {{ filter }} projects at this time.</p>
