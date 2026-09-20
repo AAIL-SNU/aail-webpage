@@ -1,4 +1,4 @@
-// Parses data/publications.bib at Eleventy build time.
+// Parses content/publications.bib at Eleventy build time.
 // No pre-generated JSON needed — .bib is the single source of truth.
 const fs   = require("fs");
 const path = require("path");
@@ -198,7 +198,7 @@ function entryToPub(entry) {
 
 // ── Load and export ───────────────────────────────────────────
 
-const bibPath = path.join(__dirname, "../data/publications.bib");
+const bibPath = path.join(__dirname, "../content/publications.bib");
 const text    = fs.readFileSync(bibPath, "utf-8");
 
 const TYPE_ORDER = { journal: 0, conference: 1, preprint: 2 };

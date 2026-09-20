@@ -1,4 +1,11 @@
 const PATH_PREFIX = "/aail-webpage/";
+const MarkdownIt = require("markdown-it");
+const inlineMd = new MarkdownIt({ html: true, breaks: true });
+inlineMd.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+  tokens[idx].attrSet("target", "_blank");
+  tokens[idx].attrSet("rel", "noopener");
+  return self.renderToken(tokens, idx, options);
+};
 
 module.exports = function (eleventyConfig) {
   // ── Passthrough: assets live at repo root ──────────────────────
@@ -21,6 +28,9 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addCollection("research", col =>
     col.getFilteredByGlob("src/content/research/*.md")
+  );
+  eleventyConfig.addCollection("professorProfile", col =>
+    col.getFilteredByGlob("src/content/professor/*.md")
   );
 
   // ── Filters ───────────────────────────────────────────────────
@@ -55,6 +65,10 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("padNum", n => String(n).padStart(2, "0"));
+
+  // Render a single line/paragraph of markdown (links, emphasis, \n -> <br>)
+  // without wrapping it in a <p>, for use inside <li> / short data-driven text.
+  eleventyConfig.addFilter("markdownInline", str => inlineMd.renderInline(str || ""));
 
   // "2026-08-24" -> "24th August 2026"
   function formatDisplayDate(date) {
@@ -99,13 +113,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("pubTeaser",           () => require("./src/lib/pubTeaser"));
   eleventyConfig.addGlobalData("publicationsGrouped", () => require("./src/lib/publicationsGrouped"));
 
+  // ── Roster/reference data (editable JSON, lives alongside the
+  //    markdown content in src/content/ rather than Eleventy's
+  //    auto-loaded data directory, since that directory is excluded
+  //    from template processing and can't hold the .md content too) ──
+  eleventyConfig.addGlobalData("members",       () => require("./src/content/members.json"));
+  eleventyConfig.addGlobalData("collaborators", () => require("./src/content/collaborators.json"));
+  eleventyConfig.addGlobalData("courses",       () => require("./src/content/courses.json"));
+  eleventyConfig.addGlobalData("projects",      () => require("./src/content/projects.json"));
+  eleventyConfig.addGlobalData("seminars",      () => require("./src/content/seminars.json"));
+
   return {
     pathPrefix: PATH_PREFIX,
     dir: {
       input:    "src",
       output:   "_site",
       includes: "_includes",
-      data:     "data",
     },
     htmlTemplateEngine:     "njk",
     markdownTemplateEngine: "njk",
