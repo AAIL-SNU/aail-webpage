@@ -11,7 +11,7 @@
       { "name": "Seungseok Oh",  "nameKr": "오승석", "email": "seungseok.oh@snu.ac.kr",  "researchInterest": "HJ Reachability, Data-driven Control, Constrained Neural Networks", "note": "Sep 2026– (pre-MSc research Nov 2025–Aug 2026)", "link": "https://seungseokoh.com", "photo": "images/members/seungseokoh.jpg" }
     ],
     "bsc": [
-      { "name": "Jaeyoung Lee",  "nameKr": "이재영", "email": "dlwodud0206@snu.ac.kr",  "researchInterest": "TBD", "note": "Nov 2025–","photo": "images/members/jaeyounglee.jpg"},
+      { "name": "Jaeyoung Lee",  "nameKr": "이재영", "email": "dlwodud0206@snu.ac.kr",  "researchInterest": "Safety Critical Control, Reinforcement learning, Multi Objective Filter", "note": "Nov 2025–","photo": "images/members/jaeyounglee.jpg"},
       { "name": "Hyeonseo An",   "nameKr": "안현서", "email": "anhyeonseo@snu.ac.kr",   "researchInterest": "Meta-learning Based Control, Partial Info TAD games", "note": "Nov 2025–", "photo": "images/members/hyeonseoan.jpg" },
       { "name": "Jungwon Kim",   "nameKr": "김중원", "email": "kimjw624@snu.ac.kr",     "researchInterest": "Reinforcement Learning, Adaptive Control", "note": "Mar 2026–", "photo": "images/members/jungwonkim.jpg" },
       { "name": "Yeongjun Lee",  "nameKr": "이영준", "email": "krkr1203@snu.ac.kr", "researchInterest": "Active Exploration, Dual Control", "note": "May 2026–", "photo": "images/members/yeongjunlee.jpg" }
