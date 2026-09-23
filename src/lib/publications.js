@@ -186,6 +186,13 @@ function entryToPub(entry) {
   const doi = entry.doi || "";
   if (!url && doi) url = doi.startsWith("http") ? doi : `https://doi.org/${doi}`;
 
+  // Most entries carry the DOI inside `url` rather than a `doi` field.
+  let doiId = doi.replace(/^https?:\/\/(dx\.)?doi\.org\//, "");
+  if (!doiId) {
+    const m = url.match(/^https?:\/\/(?:dx\.)?doi\.org\/(.+)$/);
+    if (m) doiId = m[1];
+  }
+
   return {
     type,
     year:    cleanLatex(entry.year || ""),
@@ -193,6 +200,7 @@ function entryToPub(entry) {
     authors: formatAuthors(entry.author || ""),
     venue:   buildVenue(entry),
     url,
+    doi:     doiId,
   };
 }
 

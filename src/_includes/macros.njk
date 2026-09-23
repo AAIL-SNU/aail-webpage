@@ -83,6 +83,7 @@
     <a href="{{ pub.computedUrl }}" target="_blank" rel="noopener" class="pub-title">{{ pub.title }}</a>
     <p class="pub-authors">{{ pub.authors }}</p>
     <p class="pub-venue">{{ pub.venue | safe }}</p>
+    {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener" class="pub-doi">DOI: {{ pub.doi }}</a>{% endif %}
   </div>
 </div>
 {% endmacro %}

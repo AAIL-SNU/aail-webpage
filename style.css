@@ -1246,6 +1246,18 @@ a.pub-title {
 }
 a.pub-title:hover { color: var(--blue); text-decoration: underline; }
 
+.pub-doi {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: .78rem;
+  color: var(--text-lt);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+.pub-doi:hover { color: var(--blue); }
+
 .pub-more { text-align: center; margin-top: 48px; }
 
 .gallery-card { cursor: pointer; }
