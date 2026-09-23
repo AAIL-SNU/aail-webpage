@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: "Courses — AAIL"
+navGroup: about
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('About', 'Courses') }}
+
+    {% for uni in courses %}
+    <div class="course-uni fade-in">
+      <div class="course-uni-header">
+        <span class="course-uni-badge">{{ uni.badge }}</span>
+        <h3 class="course-uni-name">{{ uni.name }}</h3>
+      </div>
+
+      {% if uni.programs %}
+        {% for prog in uni.programs %}
+        <div class="course-program">
+          <h4 class="course-program-title">{{ prog.title }}</h4>
+          <div class="course-grid">
+            {% for c in prog.courses %}{{ macros.courseCard(c) }}{% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+      <div class="course-grid">
+        {% for c in uni.courses %}{{ macros.courseCard(c) }}{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>

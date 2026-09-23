@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: "Research Topics — AAIL"
+navGroup: research
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container container-narrow">
+    {{ macros.pageHeader('Research', 'Research Topics') }}
+
+    <div class="research-content fade-in">
+      {{ collections.research[0].templateContent | safe }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: "Alumni — AAIL"
+navGroup: about
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('About', 'Alumni') }}
+
+    <div id="alumni-container">
+      {% set alumniMembers = members.cranfield.phd %}
+      {% if alumniMembers | length > 0 %}
+      <div class="members-group fade-in">
+        <h3 class="members-group-title">PhD Alumni <span class="members-group-note">(Co-supervised, Cranfield University)</span></h3>
+        <div class="members-subgroup">
+          <div class="members-grid members-grid-cols3">
+            {% for mem in alumniMembers %}
+            {{ macros.memberCard(mem, 'phd', 'PhD Alumni') }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <p style="color:var(--text-lt);font-size:.9rem;padding:16px 0;">No alumni records yet.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>

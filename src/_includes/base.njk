@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or "AAIL — Aerospace Autonomy and Intelligence Laboratory" }}</title>
+
+  <!-- SEO -->
+  <meta name="description" content="The Aerospace Autonomy and Intelligence Laboratory (AAIL) at Seoul National University develops theory and algorithms for autonomous aerospace systems — guidance &amp; control, machine learning, and safe decision-making. Led by Prof. Namhoon Cho." />
+  <meta name="keywords" content="aerospace autonomy, autonomous systems, guidance control, control barrier functions, machine learning control, SNU, Seoul National University, Namhoon Cho" />
+  <meta name="author" content="AAIL, Seoul National University" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aail-snu.github.io/aail-webpage{{ page.url }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title or 'AAIL — Aerospace Autonomy and Intelligence Laboratory' }}" />
+  <meta property="og:description" content="Research group at Seoul National University's Department of Aerospace Engineering, led by Professor Namhoon Cho." />
+  <meta property="og:image" content="https://aail-snu.github.io/aail-webpage/images/aail-logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aail-snu.github.io/aail-webpage{{ page.url }}" />
+  <meta property="og:site_name" content="AAIL" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title or 'AAIL — Aerospace Autonomy and Intelligence Laboratory' }}" />
+  <meta name="twitter:description" content="Research group at Seoul National University's Department of Aerospace Engineering, led by Professor Namhoon Cho." />
+  <meta name="twitter:image" content="https://aail-snu.github.io/aail-webpage/images/aail-logo.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchOrganization",
+    "name": "Aerospace Autonomy and Intelligence Laboratory (AAIL)",
+    "alternateName": "AAIL",
+    "url": "https://aail-snu.github.io/aail-webpage/",
+    "description": "Research group at Seoul National University developing theory and algorithms for autonomous aerospace systems.",
+    "parentOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "Seoul National University",
+      "url": "https://www.snu.ac.kr"
+    },
+    "member": {
+      "@type": "Person",
+      "name": "Namhoon Cho",
+      "jobTitle": "Assistant Professor",
+      "affiliation": "Seoul National University"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/style.css' | url }}" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <header id="navbar"{% if page.url != '/' %} class="scrolled"{% endif %}>
+    <nav class="nav-inner">
+      <div class="nav-brand">
+        <a class="nav-logo" href="{{ '/' | url }}">
+          <img src="{{ '/images/aail-logo.png' | url }}" alt="AAIL" />
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li class="has-dropdown">
+          <a href="{{ '/professor/' | url }}" class="{{ 'nav-active' if navGroup == 'about' }}">About</a>
+          <ul class="nav-dropdown">
+            <li><a href="{{ '/professor/' | url }}" class="{{ 'nav-active' if page.url == '/professor/' }}">Professor</a></li>
+            <li><a href="{{ '/members/' | url }}" class="{{ 'nav-active' if page.url == '/members/' }}">Members</a></li>
+            <li><a href="{{ '/alumni/' | url }}" class="{{ 'nav-active' if page.url == '/alumni/' }}">Alumni</a></li>
+            <li><a href="{{ '/collaborators/' | url }}" class="{{ 'nav-active' if page.url == '/collaborators/' }}">Collaborators</a></li>
+            <li><a href="{{ '/courses/' | url }}" class="{{ 'nav-active' if page.url == '/courses/' }}">Courses</a></li>
+            <li><a href="{{ '/legacy/' | url }}" class="{{ 'nav-active' if page.url == '/legacy/' }}">Legacy of FDCL</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="{{ '/research/' | url }}" class="{{ 'nav-active' if navGroup == 'research' }}">Research</a>
+          <ul class="nav-dropdown">
+            <li><a href="{{ '/research/' | url }}" class="{{ 'nav-active' if page.url == '/research/' }}">Research Topics</a></li>
+            <li><a href="{{ '/projects/' | url }}" class="{{ 'nav-active' if page.url == '/projects/' }}">Projects</a></li>
+            <li><a href="{{ '/publications/' | url }}" class="{{ 'nav-active' if page.url == '/publications/' }}">Publications</a></li>
+            <li><a href="{{ '/seminar/' | url }}" class="{{ 'nav-active' if page.url == '/seminar/' }}">Seminar</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="{{ '/news/' | url }}" class="{{ 'nav-active' if navGroup == 'board' }}">Board</a>
+          <ul class="nav-dropdown">
+            <li><a href="{{ '/news/' | url }}" class="{{ 'nav-active' if page.url == '/news/' }}">News</a></li>
+            <li><a href="{{ '/gallery/' | url }}" class="{{ 'nav-active' if page.url == '/gallery/' }}">Gallery</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="{{ '/contact/' | url }}" class="{{ 'nav-active' if navGroup == 'contact' }}">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ── MEGA MENU ──────────────────────────────────────────── -->
+    <div id="mega-menu" role="navigation" aria-label="Site sections">
+      <div class="mega-inner">
+        <div class="mega-col">
+          <a href="{{ '/professor/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/professor/' }}">Professor</a>
+          <a href="{{ '/members/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/members/' }}">Members</a>
+          <a href="{{ '/alumni/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/alumni/' }}">Alumni</a>
+          <a href="{{ '/collaborators/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/collaborators/' }}">Collaborators</a>
+          <a href="{{ '/courses/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/courses/' }}">Courses</a>
+          <a href="{{ '/legacy/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/legacy/' }}">Legacy of FDCL</a>
+        </div>
+        <div class="mega-col">
+          <a href="{{ '/research/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/research/' }}">Research Topics</a>
+          <a href="{{ '/projects/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/projects/' }}">Projects</a>
+          <a href="{{ '/publications/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/publications/' }}">Publications</a>
+          <a href="{{ '/seminar/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/seminar/' }}">Seminar</a>
+        </div>
+        <div class="mega-col">
+          <a href="{{ '/news/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/news/' }}">News</a>
+          <a href="{{ '/gallery/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/gallery/' }}">Gallery</a>
+        </div>
+        <div class="mega-col">
+          <a href="{{ '/contact/' | url }}" class="mega-link {{ 'nav-active' if page.url == '/contact/' }}">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── PAGE CONTENT ───────────────────────────────────────── -->
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="{{ '/' | url }}" class="footer-logo">
+            <img src="{{ '/images/aail-logo.png' | url }}" alt="AAIL" />
+          </a>
+          <span class="nav-brand-divider"></span>
+          <img src="{{ '/images/snu.png' | url }}" alt="Seoul National University" class="footer-snu-logo" />
+        </div>
+        <div class="footer-links">
+          <a href="{{ '/professor/' | url }}">About</a>
+          <a href="{{ '/research/' | url }}">Research</a>
+          <a href="{{ '/publications/' | url }}">Publications</a>
+          <a href="{{ '/news/' | url }}">Board</a>
+          <a href="{{ '/contact/' | url }}">Contact</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <p>Department of Aerospace Engineering, Seoul National University &nbsp;·&nbsp; Seoul, South Korea</p>
+        <p class="footer-note">© Aerospace Autonomy and Intelligence Laboratory</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="go-top" id="go-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Gallery / News Modal -->
+  <div class="gallery-modal" id="gallery-modal" aria-hidden="true">
+    <div class="gallery-modal-backdrop" id="gallery-modal-backdrop"></div>
+    <div class="gallery-modal-dialog">
+      <button class="gallery-modal-close" id="gallery-modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="gallery-modal-img-wrap" id="gallery-modal-img-wrap"></div>
+      <div class="gallery-modal-info">
+        <p class="gallery-modal-date" id="gallery-modal-date"></p>
+        <h2 class="gallery-modal-title" id="gallery-modal-title"></h2>
+        <p class="gallery-modal-text" id="gallery-modal-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inject data globals needed by script.js interaction logic -->
+  <script>
+  const NEWS           = {{ collections.news | newsJson | safe }};
+  const GALLERY        = {{ collections.gallery | galleryJson | safe }};
+  </script>
+  <script src="{{ '/script.js' | url }}"></script>
+</body>
+</html>

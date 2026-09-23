@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: "Collaborators — AAIL"
+navGroup: about
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('About', 'Collaborators') }}
+
+    <div class="collab-section fade-in">
+      <ul class="collab-list" id="collab-grid">
+        {% for c in collaborators %}
+          <li>
+            {% if c.url %}
+              <a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }}</a>
+            {% else %}
+              <span>{{ c.name }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

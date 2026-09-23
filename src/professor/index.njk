@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: "Professor — AAIL"
+navGroup: about
+---
+{% import "macros.njk" as macros %}
+{% set prof = collections.professorProfile[0] %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('About', 'Professor') }}
+
+    <div class="pi-profile fade-in">
+      <div class="pi-profile-card">
+        <div class="pi-avatar">
+          <img src="{{ ('/' ~ prof.data.photo) | url }}" alt="Prof. {{ prof.data.name }}" class="pi-photo" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="pi-avatar-initials"></div>
+        </div>
+        <h2 class="pi-name">{{ prof.data.name }}</h2>
+        <h2 class="pi-name">{{ prof.data.degrees }}</h2>
+        <div class="pi-links">
+          <a href="{{ prof.data.facultyLink }}" target="_blank" class="pi-link">Faculty Page ↗</a>
+        </div>
+      </div>
+      <div class="pi-intro">
+        {{ macros.piSection('Current<br />Position', prof.data.currentPosition) }}
+        {{ macros.socialLinks(prof.data.socialLinks) }}
+      </div>
+    </div>
+
+    <div class="pi-sections">
+      <div class="pi-section fade-in">
+        <div class="pi-section-label">Biography</div>
+        <div class="pi-section-bio">
+          <div class="pi-intro-bio">{{ prof.templateContent | safe }}</div>
+          <div class="pi-intro-interests">
+            <p class="pi-intro-interests-label">Research Interests</p>
+            <p class="pi-intro-interests-text">{{ prof.data.researchInterests }}</p>
+          </div>
+        </div>
+      </div>
+      {{ macros.piSection('Education', prof.data.education) }}
+      {{ macros.piSection('Experience', prof.data.experience) }}
+      {{ macros.piSection('Honours &amp;<br />Awards &amp;<br />Scholarships', prof.data.honours) }}
+      {{ macros.piSection('Media', prof.data.media) }}
+    </div>
+  </div>
+</section>

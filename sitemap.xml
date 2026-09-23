@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rimi1014.github.io/aail-webpage/</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://aail-snu.github.io/aail-webpage/</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/professor/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/members/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/alumni/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/collaborators/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/courses/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/legacy/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/research/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/projects/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/publications/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/seminar/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/news/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/gallery/</loc></url>
+  <url><loc>https://aail-snu.github.io/aail-webpage/contact/</loc></url>
 </urlset>

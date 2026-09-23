@@ -1,0 +1,30 @@
+{
+  "playlistUrl": "https://www.youtube.com/embed/videoseries?si=_ms2k-Avkv8vBrZX&list=PLUKMjnxSW23V-sWj5tpbov9UwfwCgKuTu",
+  "years": [
+    {
+      "year": 2026,
+      "talks": [
+        { "speaker": "Navid Azizan", "affiliation": "Massachusetts Institute of Technology", "date": "20 August", "title": "Towards Safe and Reliable AI Systems", "url": "https://www.dropbox.com/scl/fi/p92xkvyfxpnjiweb5ggav/seminar-20-August-2026.pdf?rlkey=bkgeactobfxs9zsljvpv8b5qm&dl=0" },
+        { "speaker": "James Fleming", "affiliation": "Loughborough University", "date": "19 August", "title": "MPC with Parameter-Dependent Control Policies: Motivations from Low-Speed Stabilisation of Single-Track Vehicles", "url": "https://youtu.be/WFRs-TFKz30" },
+        { "speaker": "Sukkeun Kim", "affiliation": "Karlsruhe Institute of Technology", "date": "18 August", "title": "Particle Flow-based Filters and Deterministic Prior Sample Set Prediction", "url": "https://youtu.be/XUd5PFtqa30" },
+        { "speaker": "Johannes Autenrieb", "affiliation": "German Aerospace Center (DLR)", "date": "12 August", "title": "Safety Guarantees for Aerospace Systems: A Control Barrier Function Perspective", "url": "https://youtu.be/3XipX9EnkY8" },
+        { "speaker": "Antje Dittmer", "affiliation": "German Aerospace Center (DLR)", "date": "12 August", "title": "The Research Wind Farm WiValdi and Advances in Model Predictive Control for Wind Energy Systems", "url": "https://youtu.be/goyGYe9Q6yQ" },
+        { "speaker": "Hyuntae Kim", "affiliation": "University of Maryland", "date": "7 August", "title": "Dither-Free Extremum Seeking Control via Integral Sliding Mode and Super-Twisting Differentiation", "url": "https://youtu.be/dkDQRfoRxWg" },
+        { "speaker": "Hiroyasu Tsukamoto", "affiliation": "University of Illinois Urbana-Champaign", "date": "28 July", "title": "Contraction Theory for Intelligent Control of Nonlinear Systems: Advances and Open Problems", "url": "https://youtu.be/lcOaHltbUjs" },
+        { "speaker": "Boyang Li", "affiliation": "University of California, San Diego", "date": "13 July", "title": "Beyond Safety: Reach, Avoid, and Stabilize via Hamilton-Jacobi Reachability", "url": "https://youtu.be/jAIRx6WQKVg" },
+        { "speaker": "Joon-Hyuk Ko", "affiliation": "Korea Institute for Advanced Study", "date": "2 July", "title": "Aerospace Engineering x Atomic Force Microscopy: Opportunities for Scientific Machine Learning and Control", "url": "https://youtu.be/EvLb1hDts3c" },
+        { "speaker": "Junsoo Lee", "affiliation": "University of South Carolina", "date": "5 June", "title": "Autonomous Multi-agent Networked Systems", "url": "" },
+        { "speaker": "Donghae Kim", "affiliation": "University of Texas at Austin", "date": "17 April", "title": "Game-theoretic Coordination in Distributed Multi-agent Systems", "url": "https://youtu.be/mmhZtOkbeJ0" },
+        { "speaker": "Pol Padilla Moure", "affiliation": "Singular Aircraft", "date": "3 April", "title": "Safety, Knowledge and Prediction in Terrain Following", "url": "https://youtu.be/ndLOrw-_ZP4" },
+        { "speaker": "Max Z Li", "affiliation": "University of Michigan, Ann Arbor", "date": "20 March", "title": "Managing and Operating Through Uncertainty in Air Traffic Control and Air Traffic Management", "url": "https://youtu.be/QEuGFF8FAoY" }
+      ]
+    },
+    {
+      "year": 2025,
+      "talks": [
+        { "speaker": "Sander Tonkens", "affiliation": "University of California, San Diego", "date": "26 September", "title": "Safety on the Fly: Scaling HJ Reachability through Leveraging Structure and Online Adaptation", "url": "https://youtu.be/76x6iDpev2o" },
+        { "speaker": "Joohwan Seo", "affiliation": "University of California, Berkeley", "date": "26 September", "title": "Geometric Learning and Control on SE(3) for Robotic Manipulators", "url": "https://youtu.be/Uu6yyPfMLnw" }
+      ]
+    }
+  ]
+}

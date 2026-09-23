@@ -1,0 +1,34 @@
+---
+layout: base.njk
+title: "News — AAIL"
+navGroup: board
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('Board', 'News') }}
+
+    <div class="pub-tabs fade-in">
+      <a href="{{ '/news/' | url }}" class="pub-tab active">News</a>
+      <a href="{{ '/gallery/' | url }}" class="pub-tab">Gallery</a>
+    </div>
+
+    <div id="news-container">
+      {% set newsCount = collections.news | length %}
+      <div class="board-list">
+        <div class="board-list-header">
+          <span class="board-col-num">No.</span>
+          <span class="board-col-title">Title</span>
+          <span class="board-col-date">Date</span>
+        </div>
+        {% for item in collections.news %}
+        <div class="board-row fade-in" onclick="openNewsModal({{ loop.index0 }})">
+          <span class="board-col-num">{{ newsCount - loop.index0 }}</span>
+          <span class="board-col-title">{{ item.data.title }}</span>
+          <span class="board-col-date">{{ item.data.year }}-{{ item.data.month | monthNum }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

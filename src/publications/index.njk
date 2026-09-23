@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: "Publications — AAIL"
+navGroup: research
+---
+{% import "macros.njk" as macros %}
+<section class="section">
+  <div class="container">
+    {{ macros.pageHeader('Research', 'Publications') }}
+
+    <div class="pub-tabs fade-in">
+      <button class="pub-tab active" data-filter="all">All</button>
+      <button class="pub-tab" data-filter="journal">Journal</button>
+      <button class="pub-tab" data-filter="conference">Conference</button>
+      <button class="pub-tab" data-filter="preprint">Preprint</button>
+    </div>
+
+    <div class="pub-list" id="pub-list">
+      {% for group in publicationsGrouped %}
+      <div class="pub-year-group">
+        <div class="pub-year-label">{{ group.year }}</div>
+        {% for pub in group.items %}
+        {{ macros.pubItem(pub) }}
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

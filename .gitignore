@@ -1,2 +1,8 @@
 .claude/
 *.Identifier
+node_modules/
+_site/
+.cache/
+.omc
+*.swp
+.DS_Store

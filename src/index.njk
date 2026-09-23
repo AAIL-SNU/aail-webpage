@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: "AAIL — Aerospace Autonomy and Intelligence Laboratory"
+---
+<!-- Hero -->
+<div id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <img src="{{ '/images/aail-logo-trans.png' | url }}" alt="AAIL — Aerospace Autonomy &amp; Intelligence Laboratory" class="hero-logo" />
+    <h1 class="hero-welcome">Welcome to AAIL!</h1>
+    <p class="hero-statement">The Aerospace Autonomy and Intelligence Laboratory (AAIL) is a research group in the <a href="https://aerospace.snu.ac.kr/en" target="_blank" rel="noopener">Department of Aerospace Engineering</a> at <a href="https://www.snu.ac.kr" target="_blank" rel="noopener">Seoul National University</a>, directed by <a href="{{ '/professor/' | url }}">Namhoon Cho</a>.</p>
+  </div>
+  <button class="scroll-hint" id="hero-scroll-hint" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+</div>
+
+<!-- Teaser: News -->
+<section class="section teaser-section teaser-news">
+  <div class="container">
+    <div class="teaser-header">
+      <div>
+        <span class="section-kicker">News</span>
+        <h2 class="teaser-title">Latest Updates</h2>
+      </div>
+      <a href="{{ '/news/' | url }}" class="btn btn-outline">View All News →</a>
+    </div>
+    <div id="news-teaser">
+      {% set newsCount = collections.news | length %}
+      <div class="board-list">
+        <div class="board-list-header">
+          <span class="board-col-num">No.</span>
+          <span class="board-col-title">Title</span>
+          <span class="board-col-date">Date</span>
+        </div>
+        {% for item in collections.news | take(3) %}
+        <div class="board-row fade-in" onclick="openNewsModal({{ loop.index0 }})">
+          <span class="board-col-num">{{ newsCount - loop.index0 }}</span>
+          <span class="board-col-title">{{ item.data.title }}</span>
+          <span class="board-col-date">{{ item.data.year }}-{{ item.data.month | monthNum }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

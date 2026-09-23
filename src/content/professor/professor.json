@@ -1,0 +1,16 @@
+{
+  "permalink": false,
+  "name": "Namhoon Cho 조남훈",
+  "degrees": "PhD, FHEA",
+  "photo": "images/ncho.jpg",
+  "facultyLink": "http://aail.snu.ac.kr/ncho.html",
+  "socialLinks": [
+    { "type": "mail", "href": "mailto:namhoon.cho@snu.ac.kr", "label": "namhoon.cho@snu.ac.kr" },
+    { "type": "scholar", "href": "https://scholar.google.co.uk/citations?user=DhdeDm8AAAAJ", "label": "Scholar" },
+    { "type": "researchgate", "href": "https://www.researchgate.net/profile/Namhoon_Cho", "label": "ResearchGate" },
+    { "type": "linkedin", "href": "https://www.linkedin.com/in/namhoon-cho-61b856159", "label": "LinkedIn" },
+    { "type": "orcid", "href": "https://orcid.org/0000-0001-9999-9501", "label": "ORCID" },
+    { "type": "scopus", "href": "https://www.scopus.com/authid/detail.uri?authorId=56654774400", "label": "Scopus" },
+    { "type": "github", "href": "https://github.com/nhcho91", "label": "GitHub" }
+  ]
+}

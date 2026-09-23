@@ -1,0 +1,91 @@
+[
+  {
+    "badge": "SNU",
+    "name": "Seoul National University",
+    "courses": [
+      {
+        "level": "Undergraduate",
+        "name": "Flight Dynamics and Control",
+        "code": "M2795.004500",
+        "period": "Fall 2025, Fall 2026"
+      },
+      {
+        "level": "Graduate",
+        "name": "Theory of Flight Vehicle Guidance and Control",
+        "code": "M2795.006900",
+        "period": "Spring 2026"
+      },
+      {
+        "level": "Graduate",
+        "name": "Applied Aerospace Optimal Control",
+        "code": "M2795.007200",
+        "period": "Fall 2026"
+      }
+    ]
+  },
+  {
+    "badge": "CU",
+    "name": "Cranfield University",
+    "programs": [
+      {
+        "title": "MSc in Autonomous Vehicle Dynamics and Control",
+        "courses": [
+          {
+            "name": "UAS Dynamics and Control",
+            "period": "2024–2025",
+            "role": "Module Lecturer"
+          },
+          {
+            "name": "Modelling and Simulation",
+            "period": "2024–2025",
+            "role": "Module Instructor"
+          },
+          {
+            "name": "Autonomous Vehicle Control Systems",
+            "period": "2024–2025",
+            "role": "Module Lecturer"
+          },
+          {
+            "name": "Sensor Fusion",
+            "period": "2021–2022, 2022–2023",
+            "role": "Module Lecturer"
+          },
+          {
+            "name": "Guidance and Navigation for Autonomous Systems",
+            "period": "2022–2023, 2023–2024, 2024–2025"
+          },
+          {
+            "name": "Group Design Project",
+            "period": "2020–2021, 2021–2022, 2024–2025",
+            "role": "Team Supervisor"
+          }
+        ]
+      },
+      {
+        "title": "MSc in Sensors and Communication",
+        "courses": [
+          {
+            "name": "Sensor Resource Management",
+            "period": "2025",
+            "role": "Module Lecturer"
+          }
+        ]
+      },
+      {
+        "title": "Short Courses",
+        "courses": [
+          {
+            "name": "Kalman Filtering, Sensor Fusion, and Target Tracking",
+            "period": "October 2022",
+            "role": "ADD"
+          },
+          {
+            "name": "Optimal Control, Guidance for Autonomous Systems",
+            "period": "April 2023",
+            "role": "ADD"
+          }
+        ]
+      }
+    ]
+  }
+]
