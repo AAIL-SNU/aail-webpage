@@ -129,13 +129,10 @@ function formatAuthors(str) {
   return str.split(/\s+and\s+/i).map(raw => {
     const a = cleanLatex(raw.trim());
     if (!a) return "";
-    if (a.includes(",") && !/^[A-Z][-.]/.test(a)) {
-      const [last, firstRaw = ""] = a.split(",", 2);
-      const initials = firstRaw.trim().split(/\s+/).map(tok => {
-        if (tok.includes("-")) return tok.split("-").map(x => x ? x[0] + "." : "").join("-");
-        return (tok && !tok.endsWith(".")) ? tok[0] + "." : tok;
-      });
-      return `${initials.join(" ")} ${last.trim()}`.trim();
+    // "Last, First Middle" → "First Middle Last"
+    if (a.includes(",")) {
+      const [last, first = ""] = a.split(",", 2);
+      return `${first.trim()} ${last.trim()}`.trim();
     }
     return a;
   }).filter(Boolean).join(", ");
