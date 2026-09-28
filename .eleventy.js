@@ -109,6 +109,13 @@ module.exports = function (eleventyConfig) {
     })))
   );
 
+  // Drop cached src/lib modules so --serve picks up .bib / lib edits on rebuild.
+  eleventyConfig.addWatchTarget("./src/lib/");
+  eleventyConfig.on("eleventy.before", () => {
+    const libDir = require("path").join(__dirname, "src/lib") + require("path").sep;
+    for (const k of Object.keys(require.cache)) if (k.startsWith(libDir)) delete require.cache[k];
+  });
+
   eleventyConfig.addGlobalData("publications",        () => require("./src/lib/publications"));
   eleventyConfig.addGlobalData("pubTeaser",           () => require("./src/lib/pubTeaser"));
   eleventyConfig.addGlobalData("publicationsGrouped", () => require("./src/lib/publicationsGrouped"));

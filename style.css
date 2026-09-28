@@ -1205,7 +1205,9 @@ img { max-width: 100%; display: block; }
 
 .pub-badge {
   flex-shrink: 0;
-  padding: 4px 11px;
+  width: 124px;           /* fits the longest label ("Dissertation") so all badges align */
+  text-align: center;
+  padding: 4px 6px;
   border-radius: 999px;
   font-size: .78rem;
   font-weight: 700;
@@ -1217,8 +1219,12 @@ img { max-width: 100%; display: block; }
 .pub-badge.journal  { background: #E8F3FF; color: #1A6EB5; }
 .pub-badge.conference { background: #EFF8F0; color: #1D7A35; }
 .pub-badge.preprint { background: #FFF4E5; color: #9B5200; }
+.pub-badge.korean   { background: linear-gradient(180deg, #FCE4E7 0%, #FCE4E7 30%, #E1EAF8 70%, #E1EAF8 100%); color: #3B3F8C; }
+.pub-badge.report   { background: #EEF0F3; color: #4A5260; }
+.pub-badge.thesis   { background: #FCEEF0; color: #A33347; }
 
 .pub-title {
+  display: block;
   font-size: .95rem;
   font-weight: 600;
   color: var(--text);
@@ -1245,6 +1251,15 @@ a.pub-title {
   transition: color var(--transition);
 }
 a.pub-title:hover { color: var(--blue); text-decoration: underline; }
+.pub-link-icon {
+  width: 12px;
+  height: 12px;
+  margin-left: 6px;
+  vertical-align: -1px;
+  color: var(--text-lt);
+  transition: color var(--transition);
+}
+a.pub-title:hover .pub-link-icon { color: var(--blue); }
 
 .pub-doi {
   display: inline-block;

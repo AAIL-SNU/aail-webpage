@@ -106,6 +106,15 @@ const MONTHS = {
   sep:"September",oct:"October",nov:"November",dec:"December",
 };
 
+// Month as 1–12 for sorting; 0 when absent. Ranges like "June-July" use the last month.
+function monthNumber(raw) {
+  const parts = (raw || "").toLowerCase().split(/[-–\/]/).map(s => s.trim()).filter(Boolean);
+  const last  = parts[parts.length - 1] || "";
+  if (/^\d+$/.test(last)) return parseInt(last) || 0;
+  const idx = Object.keys(MONTHS).slice(12).indexOf(last.slice(0, 3));
+  return idx + 1;
+}
+
 function cleanLatex(t) {
   if (!t) return "";
   const subs = [
@@ -154,10 +163,21 @@ function buildVenue(entry) {
     return parts.join(", ");
   }
 
-  if (["inproceedings","conference","proceedings"].includes(etype)) {
+  if (["inproceedings","conference","proceedings","incollection"].includes(etype)) {
     const bt   = cleanLatex(entry.booktitle || "");
     const addr = cleanLatex(entry.address   || "");
     return [bt, addr].filter(Boolean).join(", ");
+  }
+
+  if (etype === "techreport") {
+    const inst = cleanLatex(entry.institution || "");
+    const num  = cleanLatex(entry.number || entry.note || "");
+    return [inst, num].filter(Boolean).join(", ");
+  }
+
+  if (etype === "phdthesis") {
+    const school = cleanLatex(entry.school || "");
+    return ["Ph.D. Dissertation", school].filter(Boolean).join(", ");
   }
 
   const eprint = entry.eprint || "";
@@ -176,6 +196,9 @@ function entryToPub(entry) {
   const etype = (entry.ENTRYTYPE || "").toLowerCase();
   let type = etype === "article" ? "journal"
     : ["inproceedings","conference","proceedings"].includes(etype) ? "conference"
+    : etype === "incollection" ? "korean"
+    : etype === "techreport" ? "report"
+    : etype === "phdthesis" ? "thesis"
     : "preprint";
   if (entry.aail_type) type = entry.aail_type.trim();
 
@@ -193,6 +216,7 @@ function entryToPub(entry) {
   return {
     type,
     year:    cleanLatex(entry.year || ""),
+    month:   monthNumber(entry.month),
     title:   cleanLatex(entry.title  || ""),
     authors: formatAuthors(entry.author || ""),
     venue:   buildVenue(entry),
@@ -206,14 +230,18 @@ function entryToPub(entry) {
 const bibPath = path.join(__dirname, "../content/publications.bib");
 const text    = fs.readFileSync(bibPath, "utf-8");
 
-const TYPE_ORDER = { journal: 0, conference: 1, preprint: 2 };
+const TYPE_ORDER = { journal: 0, conference: 1, korean: 2, preprint: 3, report: 4, thesis: 5 };
 
 const pubs = parseBibtex(text)
+  .filter(e => e.ENTRYTYPE !== "misc")   // @misc holds patents, which aren't listed
   .map(e => { try { return entryToPub(e); } catch { return null; } })
   .filter(Boolean)
   .sort((a, b) => {
     const dy = (parseInt(b.year) || 0) - (parseInt(a.year) || 0);
     if (dy !== 0) return dy;
+    // Newest first within a year; entries without a month go last.
+    const dm = b.month - a.month;
+    if (dm !== 0) return dm;
     return (TYPE_ORDER[a.type] ?? 99) - (TYPE_ORDER[b.type] ?? 99);
   });
 
