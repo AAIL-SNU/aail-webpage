@@ -1596,42 +1596,17 @@ a.pub-title:hover .pub-link-icon { color: var(--blue); }
   border: 1px solid var(--border);
 }
 .contact-map iframe { display: block; height: 100%; min-height: 420px; }
-.contact-bottom .join-cta {
-  flex: 1;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.contact-bottom .join-cta .btn {
-  width: auto;
-  padding-left: 28px;
-  padding-right: 28px;
-}
+.contact-bottom .join-cta { flex: 1; }
 @media (max-width: 700px) {
   .contact-bottom { flex-direction: column; }
   .contact-map { min-height: 240px; }
 }
 
-.join-cta {
-  text-align: center;
-  padding: 40px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--bg-alt);
-}
-.join-cta h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 12px;
-}
-.join-cta p {
-  color: var(--text-mid);
-  font-size: .95rem;
-  max-width: 520px;
-  margin: 0 auto 28px;
+.contact-card.join-cta h3 { font-size: 1.15rem; margin-bottom: 16px; }
+.join-cta p + p { margin-top: 6px; }
+.join-cta a {
+  color: var(--blue);
+  text-decoration: underline;
 }
 
 /* ── BOARD LIST (News 게시판) ────────────────────────────────── */
@@ -1833,18 +1808,6 @@ a.pub-title:hover .pub-link-icon { color: var(--blue); }
   display: block;
 }
 
-.footer-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.footer-links a {
-  font-size: .825rem;
-  color: var(--text-mid);
-  transition: color var(--transition);
-}
-.footer-links a:hover { color: var(--blue); }
-
 .footer-copy {
   padding-top: 20px;
   border-top: 1px solid var(--border);
@@ -1852,11 +1815,6 @@ a.pub-title:hover .pub-link-icon { color: var(--blue); }
 .footer-copy p {
   font-size: .8rem;
   color: var(--text-lt);
-}
-.footer-note { margin-top: 4px; }
-.footer-note a {
-  color: var(--text-mid);
-  text-decoration: underline;
 }
 
 /* ── RESPONSIVE ───────────────────────────────────────────────── */
@@ -1903,7 +1861,6 @@ a.pub-title:hover .pub-link-icon { color: var(--blue); }
   .news-grid { grid-template-columns: 1fr; }
 
   .footer-inner { flex-direction: column; }
-  .footer-links { justify-content: center; }
 
   .section-header { grid-template-columns: 1fr; gap: 12px; }
   .section-header-line { display: none; }

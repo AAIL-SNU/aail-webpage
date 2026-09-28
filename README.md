@@ -33,7 +33,7 @@ Modify `src/data/projects.json`
 
 
 ### Update news / gallery
-Write a new article in `.md` format and add in `/src/content/gallery` or `/src/content/news`
+Write a new article in `.md` format and add in `/src/data/gallery` or `/src/data/news`
 
 ## How to run
 

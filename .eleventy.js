@@ -19,19 +19,21 @@ module.exports = function (eleventyConfig) {
 
   // ── Collections ───────────────────────────────────────────────
   eleventyConfig.addCollection("news", col =>
-    col.getFilteredByGlob("src/content/news/*.md")
+    col.getFilteredByGlob("src/data/news/*.md")
        .sort((a, b) => b.data.date - a.data.date)
   );
   eleventyConfig.addCollection("gallery", col =>
-    col.getFilteredByGlob("src/content/gallery/*.md")
+    col.getFilteredByGlob("src/data/gallery/*.md")
        .sort((a, b) => b.data.date - a.data.date)
   );
   eleventyConfig.addCollection("research", col =>
-    col.getFilteredByGlob("src/content/research/*.md")
+    col.getFilteredByGlob("src/data/research/*.md")
   );
   eleventyConfig.addCollection("professorProfile", col =>
-    col.getFilteredByGlob("src/content/professor/*.md")
+    col.getFilteredByGlob("src/data/professor/*.md")
   );
+
+  eleventyConfig.addShortcode("year", () => String(new Date().getFullYear()));
 
   // ── Filters ───────────────────────────────────────────────────
   eleventyConfig.addFilter("take", (arr, n) => (arr || []).slice(0, n));
@@ -121,13 +123,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("publicationsGrouped", () => require("./src/lib/publicationsGrouped"));
 
   // ── Roster/reference data (editable JSON, lives alongside the
-  //    markdown content in src/content/ rather than Eleventy's
+  //    markdown content in src/data/ rather than Eleventy's
   //    auto-loaded data directory, since that directory is excluded
   //    from template processing and can't hold the .md content too) ──
-  eleventyConfig.addGlobalData("members",       () => require("./src/content/members.json"));
-  eleventyConfig.addGlobalData("courses",       () => require("./src/content/courses.json"));
-  eleventyConfig.addGlobalData("projects",      () => require("./src/content/projects.json"));
-  eleventyConfig.addGlobalData("seminars",      () => require("./src/content/seminars.json"));
+  eleventyConfig.addGlobalData("members",       () => require("./src/data/members.json"));
+  eleventyConfig.addGlobalData("courses",       () => require("./src/data/courses.json"));
+  eleventyConfig.addGlobalData("projects",      () => require("./src/data/projects.json"));
+  eleventyConfig.addGlobalData("seminars",      () => require("./src/data/seminars.json"));
 
   return {
     pathPrefix: PATH_PREFIX,
