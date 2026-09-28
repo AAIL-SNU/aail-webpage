@@ -31,8 +31,6 @@ Modify `src/data/members.json`
 ### Update projects
 Modify `src/data/projects.json`
 
-### Update collaborators
-Modify `src/data/collaborators.json`
 
 ### Update news / gallery
 Write a new article in `.md` format and add in `/src/content/gallery` or `/src/content/news`
@@ -47,5 +45,4 @@ npm run dev
 
 
 ### TODO (For maintainers)
-- Add permalink url for collaborators
 - Publish to `https://aail-snu.github.io`

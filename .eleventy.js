@@ -125,7 +125,6 @@ module.exports = function (eleventyConfig) {
   //    auto-loaded data directory, since that directory is excluded
   //    from template processing and can't hold the .md content too) ──
   eleventyConfig.addGlobalData("members",       () => require("./src/content/members.json"));
-  eleventyConfig.addGlobalData("collaborators", () => require("./src/content/collaborators.json"));
   eleventyConfig.addGlobalData("courses",       () => require("./src/content/courses.json"));
   eleventyConfig.addGlobalData("projects",      () => require("./src/content/projects.json"));
   eleventyConfig.addGlobalData("seminars",      () => require("./src/content/seminars.json"));
