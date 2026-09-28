@@ -4,6 +4,9 @@
     {
       "year": 2026,
       "talks": [
+        { "speaker": "Jason Jangho Choi", "affiliation": "University of California, Los Angeles", "date": "23 September", "title": "Benchmarking Safety Certificate Functions", "url": "https://www.dropbox.com/scl/fi/7qsva2p8qsygg8cis0yb3/seminar-23-September-2026.pdf?rlkey=l81e9wv0n3dwds406t4jfomj1&dl=0" },
+        { "speaker": "Youngjae Min", "affiliation": "Massachusetts Institute of Technology", "date": "21 September", "title": "Structured Learning for Reliable Autonomy", "url": "https://www.dropbox.com/scl/fi/fp7ebva5lvg730izht1uy/seminar-21-September-2026.pdf?rlkey=ir55l292shoddag8g4h3kyghf&dl=0" },
+        { "speaker": "Hyo-Sang Shin", "affiliation": "KAIST, Cranfield University", "date": "9 September", "title": "Toward Assured Aerial Autonomy at Scale: From Fixed Safety Constraints to Negotiable Resources", "url": "https://www.dropbox.com/scl/fi/5vuos1qzth1vkc8cwqrrt/seminar-9-September-2026.pdf?rlkey=x13t6vcj45vfzc4f26hslgofr&dl=0" },
         { "speaker": "Navid Azizan", "affiliation": "Massachusetts Institute of Technology", "date": "20 August", "title": "Towards Safe and Reliable AI Systems", "url": "https://www.dropbox.com/scl/fi/p92xkvyfxpnjiweb5ggav/seminar-20-August-2026.pdf?rlkey=bkgeactobfxs9zsljvpv8b5qm&dl=0" },
         { "speaker": "James Fleming", "affiliation": "Loughborough University", "date": "19 August", "title": "MPC with Parameter-Dependent Control Policies: Motivations from Low-Speed Stabilisation of Single-Track Vehicles", "url": "https://youtu.be/WFRs-TFKz30" },
         { "speaker": "Sukkeun Kim", "affiliation": "Karlsruhe Institute of Technology", "date": "18 August", "title": "Particle Flow-based Filters and Deterministic Prior Sample Set Prediction", "url": "https://youtu.be/XUd5PFtqa30" },
