@@ -85,7 +85,7 @@ npm install
 npm run dev
 ```
 
-http://localhost:8080/aail-webpage/ 에서 확인할 수 있고, 파일을 저장하면 바로 반영됩니다.
+http://localhost:8080/ 에서 확인할 수 있고, 파일을 저장하면 바로 반영됩니다.
 
 ## 배포
 

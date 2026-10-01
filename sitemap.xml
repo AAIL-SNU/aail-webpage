@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aail-snu.github.io/aail-webpage/</loc>
+    <loc>https://aail.snu.ac.kr/</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/professor/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/members/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/alumni/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/courses/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/legacy/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/research/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/projects/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/publications/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/seminar/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/news/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/gallery/</loc></url>
-  <url><loc>https://aail-snu.github.io/aail-webpage/contact/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/professor/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/members/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/alumni/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/courses/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/legacy/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/research/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/projects/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/publications/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/seminar/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/news/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/gallery/</loc></url>
+  <url><loc>https://aail.snu.ac.kr/contact/</loc></url>
 </urlset>

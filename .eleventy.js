@@ -1,4 +1,4 @@
-const PATH_PREFIX = "/aail-webpage/";
+const PATH_PREFIX = "/";
 const MarkdownIt = require("markdown-it");
 const inlineMd = new MarkdownIt({ html: true, breaks: true });
 inlineMd.renderer.rules.link_open = (tokens, idx, options, env, self) => {

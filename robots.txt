@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aail-snu.github.io/aail-webpage/sitemap.xml
+Sitemap: https://aail.snu.ac.kr/sitemap.xml
