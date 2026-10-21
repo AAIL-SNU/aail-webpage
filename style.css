@@ -614,7 +614,7 @@ img { max-width: 100%; display: block; }
   color: var(--blue);
   transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
-.pi-social-link:hover {
+.pi-social-link:not(.pi-social-text):hover {
   background: var(--blue);
   color: #fff;
   border-color: var(--blue);
@@ -1386,7 +1386,6 @@ a.pub-title:hover .pub-link-icon { color: var(--blue); }
   margin-top: 5px;
   word-break: break-all;
 }
-.member-email:hover { text-decoration: underline; }
 .member-research {
   font-size: .82rem;
   color: var(--text-lt);

@@ -4,7 +4,7 @@
   "photo": "images/ncho.jpg",
   "facultyLink": "https://nhcho91.github.io",
   "socialLinks": [
-    { "type": "mail", "href": "mailto:namhoon.cho@snu.ac.kr", "label": "namhoon.cho@snu.ac.kr" },
+    { "type": "mail", "label": "namhoon.cho at snu.ac.kr" },
     { "type": "scholar", "href": "https://scholar.google.co.uk/citations?user=DhdeDm8AAAAJ", "label": "Scholar" },
     { "type": "researchgate", "href": "https://www.researchgate.net/profile/Namhoon_Cho", "label": "ResearchGate" },
     { "type": "linkedin", "href": "https://www.linkedin.com/in/namhoon-cho-61b856159", "label": "LinkedIn" },
