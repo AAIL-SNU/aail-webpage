@@ -4,6 +4,7 @@
     {
       "year": 2026,
       "talks": [
+        { "speaker": "Doo-Hyun Cho", "affiliation": "D.Notitia", "date": "23 October", "title": "Transforming R&D Productivity with Generative AI and Coding Agents: From Research Ideas to Algorithm Development and Scientific Publications", "url": "https://youtu.be/WhfrxpA1LSM?si=lg_7UDt-EmSEy8sB" },
         { "speaker": "Jason Jangho Choi", "affiliation": "University of California, Los Angeles", "date": "23 September", "title": "Benchmarking Safety Certificate Functions", "url": "https://www.dropbox.com/scl/fi/7qsva2p8qsygg8cis0yb3/seminar-23-September-2026.pdf?rlkey=l81e9wv0n3dwds406t4jfomj1&dl=0" },
         { "speaker": "Youngjae Min", "affiliation": "Massachusetts Institute of Technology", "date": "21 September", "title": "Structured Learning for Reliable Autonomy", "url": "https://www.dropbox.com/scl/fi/fp7ebva5lvg730izht1uy/seminar-21-September-2026.pdf?rlkey=ir55l292shoddag8g4h3kyghf&dl=0" },
         { "speaker": "Hyo-Sang Shin", "affiliation": "KAIST, Cranfield University", "date": "9 September", "title": "Toward Assured Aerial Autonomy at Scale: From Fixed Safety Constraints to Negotiable Resources", "url": "https://www.dropbox.com/scl/fi/5vuos1qzth1vkc8cwqrrt/seminar-9-September-2026.pdf?rlkey=x13t6vcj45vfzc4f26hslgofr&dl=0" },
