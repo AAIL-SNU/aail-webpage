@@ -14,7 +14,8 @@
       { "name": "Jaeyoung Lee",  "nameKr": "이재영", "email": "dlwodud0206@snu.ac.kr",  "researchInterest": "Safety Critical Control, Reinforcement learning, Multi Objective Filter", "note": "Nov 2025–","photo": "images/members/jaeyounglee.jpg"},
       { "name": "Hyeonseo An",   "nameKr": "안현서", "email": "anhyeonseo@snu.ac.kr",   "researchInterest": "Meta-learning Based Control, Partial Info TAD games", "note": "Nov 2025–", "photo": "images/members/hyeonseoan.jpg" },
       { "name": "Jungwon Kim",   "nameKr": "김중원", "email": "kimjw624@snu.ac.kr",     "researchInterest": "Reinforcement Learning, Adaptive Control", "note": "Mar 2026–", "photo": "images/members/jungwonkim.jpg" },
-      { "name": "Yeongjun Lee",  "nameKr": "이영준", "email": "krkr1203@snu.ac.kr", "researchInterest": "Active Exploration, Dual Control", "note": "May 2026–", "photo": "images/members/yeongjunlee.jpg" }
+      { "name": "Yeongjun Lee",  "nameKr": "이영준", "email": "krkr1203@snu.ac.kr", "researchInterest": "Active Exploration, Dual Control", "note": "May 2026–", "photo": "images/members/yeongjunlee.jpg" },
+      { "name": "Yumin Jeong",  "nameKr": "정유민", "email": "jyumin@snu.ac.kr", "researchInterest": "Trajectory Optimization, Data-driven Control", "note": "Nov 2026–", "photo": "images/members/yuminjeong.jpg" }
     ]
   },
   "cranfield": {
